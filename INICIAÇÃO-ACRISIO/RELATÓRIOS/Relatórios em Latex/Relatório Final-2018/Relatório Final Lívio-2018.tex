@@ -1,0 +1,482 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}%inserir anexos
+\usepackage{amsmath,amsfonts,amssymb}%pacotes para termos matemáticos e símbolos
+\begin{document}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.8]{federal.JPG}
+\vspace{-20pt}
+\end{center}
+\end{figure}
+\vspace{-0.50cm}
+
+\begin{center}
+MINISTÉRIO DA EDUCAÇÃO - MEC \\
+UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI \\
+DEPARTAMENTO DE FÍSICA \\
+PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PRPPG \\
+COORDENADORIA GERAL DE PESQUISA - CGP \\
+PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIBIC - UFPI \\
+CAMPUS UNIVERSITÁRIO MINISTRO PETRÔNIO PORTELA - BLOCO 06 - BAIRRO
+ININGA CEP: 64049-550 - TERESINA-PI - BRASIL - FONE: (86) 3215-5564
+- FONE/FAX: (86) 3215-5560
+\end{center}
+
+%\begin{center}
+%\vspace{2.0cm} {\begin{center} {\textsc{Projeto de Pesquisa}}
+%\end{center}}
+%\end{center}
+\vspace{1.8cm}
+
+\begin{center}
+\Large{ \bf{Estudo computacional do efeito do meio compressor em nanotubos de carbono.}}
+\end{center}
+
+\vspace{1.20cm}
+
+
+\begin{center}
+Orientando: Antonio Lívio de Sousa Cruz - Física - DF - UFPI.
+\end{center}
+
+\begin{center}
+Orientador: Prof. Dr. Acrísio Lins de Aguiar - DF - UFPI.
+\end{center}
+
+
+\vspace{1.0cm}
+\begin{center}
+ Teresina - PI.
+\end{center}'	
+\begin{center}
+Fevereiro de 2017
+\end{center}
+
+\newpage
+
+%\maketitle
+
+
+
+
+
+
+\newpage
+
+\begin{center}
+\textbf{Resumo}
+\end{center}
+
+
+
+
+\vspace{0.5cm} Temos por objetivo estudar os efeitos do meio compressor em nanotubos de carbono, ou seja, a pressão que um fluido pode exercer nesta nanoesrutura de carbono em questão. Simulações computacionais serão usadas para o estudo do ordenamento espacial dessa matéria, sendo o algoritmo de Verlet o responsável pelo cálculo da dinâmica molecular de um fluido dentro de um sistema. Utilizaremos o algoritmo, primeiramente, para simular o movimento de um número arbitrário de partículas que irão representar as partículas que compõem o gás de argônio. Em seguida, adicionamos ao código um gerador de números aleatórios e as condições periódicas de contorno para que o sistema se aproxime ao máximo do real, para depois introuzirmos o potencial de Lenard-Jones, o que nos dará a força entre as partículas, a aceleração de cada uma delas, a energia cinética e a temperatura do sistema. A fim de observar a compressão de nanotubos, observando a variação do seus volumes durante suas diferentes fases, suas entalpias e sua mudança de fase.
+
+
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introdução}
+
+\paragraph{} No método da dinâmica molecular, as leis de Newton são aplicadas em átomos ou moléculas -- despresando os efeitos quânticos -- para que seja obtida a trajetória de um certo numero de particulas em um dado tempo, e assim calcuçar as propriedades de interesse do sistema. As simulações computacionais são importantes também por poderem reproduzir cenários difíceis, ou ate mesmo impossíveis de serem reproduzidos por experimentos comuns.
+\paragraph{} Uma das ferramentas que podemos utilizar para investigar o ordenamento do sistema é a função radial de pares. Neste trabalho iremos ilustrar o cálculo desta função $g(r)$ para o Argônio. Os aspectos essenciais deste sistema são razoavelmente bem capturados pelo modelo Lennard-Jones. A descrição de fluidos e sólidos, em algumas situações, deve ser feita em duas dimensões como, por exemplo, quando estão sendo investigados filmes finos\cite{Madeira}. As simulações bidimensionais, por exigirem poucos recursos computacionais e facilitarem a visualização grafica de certas quantidade físicas, se tornam muito convenientes. Mas neste caso faremos uma simulação tridimencional, que seria de uma caixa cúbica contendo tal elemento.
+
+\paragraph{}  A simulação feita por computadores é um método utilizado para compreender as propriedades dessa matéria, quando o experimento em si não se torna possível por conta de sua dificuldade.
+
+\paragraph{} Descobertos em $1991$ por S. Iijima, os nanotubos de carbono são atualmente um dos assuntos de destaque na nanociência e nanotecnologia, ultrapassando assim as barreiras da física, chegando a serem estudados nas áreas da biologia, ciência dos materiais, Farmácia, etc\cite{Gomes}. Desde o seu descobrimento, são estudadas suas propriedades térmicas, óticas, mecânicas e elétricas para que sejam de conhecimento as vastas possibilidades de utilização que possuem, segundo suas características. Assim, estas nanoestruturas podem ser utilizadas em diferentes tipos de materiais, como concreto, fibras, polímeros, sensores, dentre outros\cite{Gomes}. 
+
+\paragraph{} Os CNTs(do inglês, \textit{carbon nanotubes}) podem ser descritos como o produto do enrolamento de uma folha de grafeno e podem ser classificados de duas maneiras. A primeira é dividida em dois grupos, no primeiro estam os nanotubos de uma única parede, ou SWNTs(do inglês, \textit{single wall nanotubes}), e no outro estão os nanotubos de múltiplas paredes, ou MWNTs(do inglês, \textit{multi wall nanotubes}), onde neste último grupo se destacam os DWNTs(do inglês, \textit{doble wall nanotubes}) e os TWNTs(do inglês, \textit{triple wall nanotubes})\cite{Marce}. A segunda forma de classificação é feita pela forma com que a folha de grafeno é enrolada\cite{Marce}, isso irá depender dos valores dos índices inteiros (n,m), do vetor quiral $\vec{C}_h$ e do vetor translacional $\vec{T}$. Então, se os índices são iguais (n,n) o nanotubo é do tipo \textit{armchair} (\textit{$\theta$} = $30^{o}$), se são arbitrários (n,m) é do tipo \textit{quiral}  e se tivermos m igual a zero (n,$0$) é do tipo \textit{zigzag} (\textit{$\theta$} = $0$), onde o ângulo $\theta$ é o ângulo quiral entre $\vec{C}_h$ e $\vec{T}$. Iremos, neste relatório, observar apenas o comportamento do nanotubo do tipo zigzag, onde este estará isolado dentro de uma caixa e imerso em gás argônio.
+
+\newpage
+\section{Revisão de Literatura}
+Primeiramente, nos foi proposto a reprodução do artigo do Lucas Madeira de dinâmica molecular utilizando o algoritmo de Verlet, onde este foi um guia essencial para a produção da simulação da caixa cheia de gás argônio e estudo de suas propriedades e características, para saber se condiz com um modelo real, assim froam úteis os artigos de A. M. Namba e V. B. da Silva, de R. C. M. T. Oliveira sobre dinâmica molecular e do livro de M. P. Allen e D. J. Tildesley sobre dinâmica molecular de líquidos, do qual eu abstrai sobre condições periódicas de contorno. Após os trabalhos com a simulação da caixa terem terminados, tive como base a tese de mestrado de Marcelo Rodrigues dos Anjos para que pudesse começar os trabalhos com simulação da compressão de nanotubos e para que pudesse ter um pouco mais de fundamento, extraí informações do artigo de Antonio Gomes de Souza Filho e Solange Binotto Fagan sobre funcionalização de nanotubos e no artigo de Marcelo Hawrylak Herbst, Maria Iaponeide Fernandes Macêdo e Ana Maria Rocco que fala da tecnologia relacionada ao nanotubos para que me acrescentasse sobre a utilização dos nanotubos na indústria e suas capacidades.
+
+
+
+
+
+
+
+
+\newpage
+\section{Metodologia}
+
+Daremos início a uma introdução ao potencial que descreve a interação entre as partículas, o potencial de Lenard-Jones. A seguir discutiremos a teoria sobre a função radial de pares $g(r)$. Logo após, podemos apresentar os conceitos que servem de base para a dinâmica molecular, abordando os algoritmos a serem usados, que englobam o cálculo das posições e velocidades das partículas que no caso, são oferecidos pelo próprio algoritmo de verlet. O cálculo da força que é obtida pela derivada do potencial de Lennard-Jones e é eplicada pelo próprio potencial entre as partículas do sistema. Podemos assim definir a energia cinética e temperatura do sistema com cálculos clássicos vistos nos cursos de física básica que são passados para a linguagem de programação. As condições periódicas de contorno e a convenção da mínima imagem são definidos utilizando \textit{loops} e funções intrínsecas para que o programa entenda que as partículas não devem ultrapassar os limites da caixa. Para fazer a simulação a compressão dos nanotubos de diversos tamanhos foi utilizado o \textit{Brenner's code}, com o qual comprimimos os CNTs de cada tamanho em sua fase circular e colapsada, calculamos sua pressão de colapso, módulo de bulk e por fim, pudemos obter os gráficos desejados.
+
+
+
+\newpage
+
+
+
+\section{Potencial de interação entre partículas}
+
+\paragraph{} Considerando que trabalharemos com um sistema de $N$ partículas onde sua dinâmica pode ser tratada de forma clássica. A interação entre as partículas depende da distância entre elas, logo, o potencial de Lennard-Jones descreve essas interações para diversos sistemas reais e será adotado
+
+\begin{equation}
+V(r)=4\epsilon\left[\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6}\right],
+\end{equation}
+
+\paragraph{} sendo que $\sigma$ é usado como unidade de comprimento, $\epsilon$ como de energia, $r$ é a distância entre as partículas e usando $m$ como parâmetro de massa. Na Fig. $1$ podemos ver esse potencial parametrizado para o Argônio, no qual podemos observar a parte atrativa, onde a energia tende a $0$(zero) e a distância é crescente, e a repulsia, onde $(r\longrightarrow{0})$.
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=1.0]{potencial.png}
+\caption{Potencial de Lennard-Jones para o Argônio.}
+\end{figure}
+
+
+
+\section{Função radial de distribuição de pares}
+\paragraph{}
+ A função radial de distribuição de pares é uma medida de correlação entre as partículas de um sistema de muitos corpos. Escolhendo uma das partículas como referencial(origem), como é mostrado na Fig. $2$, pode-se obter o número médio de partículas a uma distância de $r$ a $r+dr$, que é $\rho g(r) dr$, sendo que $g(r)$ é a função radial de distribuição de pares, que funciona como uma "densidade local", ou seja, quando $g(r)=1$ essa é a densidade média do sistema, quando a função adquire valores mais altos a densidade local é maior, e quando adquire valores menores a densidade é menor que a média\cite{Madeira}.
+ 
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.9]{funcaoradial.jpg}
+\caption{Uma partícula foi fixada na origem, e desenhamos as
+coroas circulares em relação a ela. O número de partículas em
+cada coroa da origem à função $g(r)$ resultante.}
+\end{figure}
+
+\section{Dinâmica molecular}
+\subsection{Algoritmo de Verlet}
+\paragraph{}
+	Para computar as tragetórias das N partículas e realizar a simulação de dinâmica molecular, é necessário um algoritmo capaz de: 
+\begin{itemize}
+\item resolver numericamente as equações de Newton;
+\item calcular as posições e velocidades das partículas em um instante $t$ e $t+dt$;
+\item de permitir o uso de um $\Delta t$ relativamente grande;
+\item calcular as tragetórias clássicas com precisão;
+\item conservar energia e \sl momentum;
+\item ser reversível no tempo;
+\item ser computacionalmente não dispendioso.
+\end{itemize}
+
+\paragraph{} 
+Para o cálculo das tragetórias através do algoritmo de verlet serão utilizadas as equações de Newton para posição
+
+\begin{equation}
+x_{n+1}=x_n+v_n \Delta t+ \frac{1}{2} a_n (\Delta t)^2,
+\end{equation}
+e para velocidade
+\begin{equation}
+v_{n+1}=v_n+\frac{1}{2} (a_{n+1}+a_n) (\Delta t).
+\end{equation}
+
+\subsubsection{Gerador de números aleatórios}
+\paragraph{}
+Para que o sistema simulado seja o mais próximo do real, foi vista a necessidade de inserir um código que fosse capaz de gerar números aleatórios para as posições e velocidades iniciais de cada partícula, apresentado na Fig. $3$. Tal gerador utiliza o tempo de máquina para que a cada vez que o programa for executado, sejam gerados numeros aleatórios diferentes dos que foram gerados nas execuções anteriores do programa. Podemos identificar também, abaixo do cálculo das velocidades e posições iniciais, um loop que tem por objetivo calcular as distâncias entre as partículas, de modo que, caso tal distância seja menor que $4\AA$(distância mínima exigida para respeitar o Princípio da Exclusão de Pauli),o programa calcula uma nova posição de modo que satisfaça a condição exigida.
+	
+ \begin{figure} [!h]
+ \centering
+ \includegraphics[scale=0.58]{subrotina2.png}
+ \caption{Código para gerar números aleatórios para velocidade e posição iniciais de modo que elas sejam posicionadas a uma distância mínima uma da outra.}
+ \end{figure}
+
+	Podemos observar que, no caso do cálculo das velocidades iniciais, temos os dois números aleatórios $r$ e $s$ associados aos ângulos $\theta$ e $\phi$, que serão usados para calcular as velocidades através de coordenadas esféricas. Assim, para obtermos a posições iniciais, multiplicamos esses dois números aleatórios gerados pelo tamanho da caixa a ser definido pelo programador.
+
+\subsubsection{Cálculo da posição e velocidade}
+
+\paragraph{} Serão utilizadas também funções do próprio algoritmo para realizar o cálculo -- classicamente -- do deslocamento das partículas $r(t=\Delta t)$:
+
+\begin{equation}
+r(t+\Delta t)= 2r(t)-r(t-\Delta t)+a(t)\Delta t^2+O(\Delta t)^4
+\end{equation}
+
+e também sua velocidade $v(t)$:
+\begin{equation}
+v(t)=\frac{r(t+\Delta t)-r(t-\Delta t)}{2\Delta t}, 
+\end{equation}
+
+onde ambas as equações $(4)$ e $(5)$ serão utilizadas diretamente nos cálculos feitos na linguagem de programação Fortran(90), que foi a utilizada para realizar a simulação em questão, representado na Fig. $4$.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[scale=0.8]{velocidade-posicao.png}
+ \caption{Cálculo da posição($rt$) e da velocidade($vt$), através das equações $(4)$ e $(5)$, utilizando Fortran 90.}
+ \end{figure}
+ 
+ \subsubsection{Energia cinética e temperatura}
+ \paragraph{}
+ Como podemos calcular posição e velocidade de cada partícula, como visto anteriormente, somos capases de, a partir daí, introduzirmos um cálculo que nos possibilita obtermos a energia cinética do sistema, como pode ser visto na eq. $(6)$.
+ 	
+\begin{equation}
+ E_c=\frac{1}{2}\sum_{i=1}^{N} m_i\vert v_i(t).v_i(t) \vert,
+\end{equation}
+\paragraph{} 	
+A qual podemos associar à temperatura$(T)$ a ser descoberta através da teoria cinética dos gases, chegando a
+
+\begin{equation}
+E_c=\frac{3}{2}NK_bT, K_b=1,38064852\times10^-23 \frac{m^2kg}{s^2K},
+\end{equation}
+onde $K_b$ é a constante de Boltzmann, $T$ a temperatura do sistema e $N$ o número de avogadro, mas que na linguagem Fortran 90 irá representar o numero de partículas. Podemos daí, isolar a temperatura, obtendo
+
+\begin{equation}
+T=\frac{1}{3NK_b}\sum_{i=1}^{N} m_i\vert v_i(t).v_i(t)\vert,
+\end{equation}
+
+de onde fazemos as converções de $m \rightarrow \r{A}$, $s \rightarrow fs$ e $kg \rightarrow amu$, onde chegamos à seguinte equação
+
+\begin{equation}
+T=\frac{E_c\times 2000000}{3\times N\times 0.831445935}
+\end{equation}
+
+ que em linguagem Fortran 90 é demonstrada na Fig $5$.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[scale=0.8]{energia.png}
+ \caption{Código usado para obter a energia cinética e temperatura do sistema no decorrer do tempo estipulado para a simulação.}
+ \end{figure}
+ 
+ 
+ 
+\subsubsection{Cálculo da força através do potencial de Lennard-Jones e da aceleração}
+
+\paragraph{} Tal força pode ser obtida através do gradiente do potencial de interação como mostrado na equação
+
+\begin{equation} 
+ F(r)=-\nabla V(r)=\frac{24 \epsilon}{r} \left[2\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6} \right]\hat{r},
+\end{equation}
+
+onde podemos perceber que foi nessessário o cálculo da distância entre cada partícula.
+
+As componentes da acelerações $a_n$ são obtidas através da Segunda Lei de Newton, utilizando massa atômica do argônio e as componentes da força
+
+\begin{equation}
+a_n^x=\frac{F(r)^x}{m}
+\end{equation}
+\begin{equation}
+ a_n^y=\frac{F(r)^y}{m}
+\end{equation}
+\begin{equation}
+a_n^z=\frac{F(r)^z}{m}
+\end{equation}
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[scale=0.7]{subrotina1.png}
+ \caption{Na subrotina, acima podemos verificar que os loops utilizados para calcular as distâncias entre as partículas, as componentes($Frx$, $Fry$, $Frz$) da força $F(r)$ entre cada uma delas e as componetes($ac(a,1)$, $ac(a,2)$, $ac(a,3)$ e $ac(b,1)$, $ac(b,2)$, $ac(b,3)$) da aceleração.}
+ \end{figure}
+	
+	Após o cálculo do módulo da distância ter sido feito, como visto na subrotina mostrada na Fig. $6$, podemos chegar à força, esta que pela segunda Lei de Newton nos possibilitará chegar à aceleração de cada partícula, para que o cálculo das velocidades utilizando o algoritmo de verlet possa ser efetuado com completude.
+
+
+\subsubsection{Reflexões nas paredes versus Condições Periódicas de Contorno}
+
+\paragraph{}
+Ao realizar uma simulação de um sistema físico com uma ordem de $10^{2}-10^{6}$ partículas, pode-se observar um efeito indesejado causado pelas superfídies da caixa de simulação\cite{Namba}. Esse fato demonstra que considerar a reflexão das partículas nas "paredes" do sistema se torna inapropriado, e como forma de extinguir esses efeitos causados pelas bordas, admitiu-se as condições periódicas de contorno\cite{Livro}. Um resultado disto é que sempre que uma partícula deixa a célula de simulação, é substituída por outra com exatamente a mesma velocidade e que entra pela face da célula oposta, um efeito rotativo\cite{Oliveira}. Assim, o número de partículas na célula é conservado, de maneira que o sistema total forma um contínuo. Além disso, nenhuma partícula sente qualquer efeito de superfície, pois esses são removidos completamente. A Fig.$7$ demostra o funcionamento das condições periódicas de contorno.
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.8]{condicoesdecontorno.png}
+\caption{A célula de simulação principal é replicada, assim como as partículas que a compõem. No momento que uma partícula deixa uma célula, esta deverá aparecer na célula adjacente, conservando sua velocidade e o número de partículas em cada célula\cite{Oliveira}.}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.8]{contorno.png}
+\caption{Temos acima o código que foi implementado para que fosse adicionado ao sistema, as condições periódicas de contorno.}
+\end{figure}
+
+Na Fig. $8$, temos dentro de um loop, o comando IF, que é o responsável por tornar possível as condições periódicas de contorno, o qual limita o movimento das partículas à caixa de tamanho que será definido pelo programador. Quando uma partícula passa por alguma das seis faces da caixa cúbica, essa parte do código a ordena para que volte para a face oposta da caixa, cotinuando assim seu movimento de forma que não ultrapasse os limites definidos.
+
+
+\section{Compressão na Fase Circular do Nanotubo}
+
+A primeira coisa que fazemos é diminuir gradualmente o volume da caixa onde se encontra o nanotubo zigzag imerso em gás argônio. Podemos observar apenas três fases, a circular, a ovalisada e a \textit{peanut}, já que a fase poligonalizada nao pode ocorrer visto que o nanotubo se encontra isolado na caixa. Ao realizarmos a primeira compressão, paramos o programa no momento em que há uma aparente mudança de fase(para a \textit{peanut}), após isso, fazemos uma descompressão do nanotubo colapsado assim podendo observar com que rapidez ele volta para a fase circular e se volta(dependendo do seu diâmetro). Feita a descompressão, tomamos o último ponto em que o mesmo está colapsado(antes de tornar-se circular novamente) e voltamos a comprimí-lo uma segunda vez, mesmo ja estando colapsado. Podemos observar as fases circular e colapsada nas figuras  
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.3]{10-0-circular.png}
+\caption{Imagem da simulação feita de um SWNT(zigzag) 10-0 na fase circular isolado numa caixa}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.3]{10-0-colaps.png}
+\caption{Imagem da simulação feita de um SWNT(zigzag) 10-0 na fase colapsada isolado numa caixa}
+\end{figure}
+
+%\begin{figure} [!h]
+%\centering
+%\includegraphics[scale=0.3]{17-0-circular.png}
+%\caption{Imagem da simulação feita de um SWNT(zigzag) 17-0 na fase circular isolado numa caixa}
+%\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.3]{17-0-colaps.png}
+\caption{Imagem da simulação feita de um SWNT(zigzag) 17-0 na fase colapsada isolado numa caixa}
+\end{figure}
+
+Ao fazer os dois processos de compresssão, nos será fornecido um arquivo do qual podemos obter um gráfico da pressão pelo volume, porém, este não será o volume do nanotubo, mas de todo o conjunto que esta na caixa(nanotubo e gás argônio). Como queremos apenas o volume do nanotubo calculado pelo programa, que analiticamente pode ser obtido por
+
+\begin{equation}
+V=\pi\dfrac{d_{t}^2}{2}L_c
+\end{equation}
+sendo $L_c$ o comprimento do nanotubo e
+\begin{equation}
+d_t=\dfrac{|\vec{C}_h|}{\pi}=\dfrac{a\sqrt{n^{2}+m^{2}+nm}}{\pi}, 
+\end{equation}
+o seu diâmetro, onde
+\begin{equation}
+\vec{C_h}=n\vec{a_1}+m\vec{a_2}.
+\end{equation}
+
+e observamos então que o vetor quiral $\vec{C_h}$ depende dos vetores primitivos da rede hexagonal do grafeno $\vec{a_1}$ e $\vec{a_2}$\cite{Marce},precisamos utilizar então uma subrotina que utiliza um cálculo integral seccionando o nanotubo parte por parte para que o cálculo seja preciso. 
+
+Ao utilizar a subrotina, neste caso, nos nanotubos $(10,0)$ até o $(20,0)$, a mesma irá nos fornecer os valores do volume pela pressão do nanotubo(como é mostrado nas fig. $15$, $16$ e $17$) e da sua entalpia pela pressão, podemos então utilizar a eq. $15$ para calcular o diâmetro de cada um. Plotando os gráficos entalpia \textit{vs} pressão tanto da fase circular quanto da fase colapsada, fazemos a regressão linear de ambas para ober o valor da reta H(p), das duas fases. Igualando as duas equações encontradas obtemos enfim a pressão de colapso do nanotubo. Para calcular o módulo de Bulk temos
+
+\begin{equation}
+B_0=-V\dfrac{\partial p}{\partial V}
+\end{equation}
+
+assim, podemos plotar os graficos das fig. $13$ e $14$.
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.4]{10-0.png}
+\caption{Gráficos de Pressao \textit{vs} volume de um SWNT(zigzag) 10-0 na fase circular(em preto e na fase colapsada(em vermelho}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.4]{15-0.png}
+\caption{Gráficos de Pressao \textit{vs} volume de um SWNT(zigzag) 15-0 na fase circular(em preto e na fase colapsada(em vermelho}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.4]{20-0.png}
+\caption{Gráficos de Pressao \textit{vs} volume de um SWNT(zigzag) 20-0 na fase circular(em preto e na fase colapsada(em vermelho}
+\end{figure}
+
+
+
+
+\section{Resultados}
+
+
+\paragraph{}
+Ao produzir um código que tem por objetivo simular uma caixa com $N$ átomos, fomos capazes de reproduzir diversas características da dinâmica desse gás como força atrativa e repulsiva entre as partículas, deslocamento, velocidade e aceleração de cada uma, energia cinética e, por fim, a temperatura do sistema.   
+\paragraph{}  
+Como pode ser visto com mais detalhes em $5.1.3$, podemos obter a temperatura do sistema com o passar do tempo utilizando a energia cinética calculada através da teoria cinética dos gases. Neste caso, onde utilizamos átomos de argônio que possuem uma velocidade expecífica($Va$) de $0.00319 \AA/fs$ em temperatura ambiente,onde através do algoritmo pudemos colher gráficos onde o gás apresenta cinco$(5)$ velocidades diferentes em função de $Va$, a fim de observar o comportamento do gás. Utilizamos neste sistema $50$ partículas, tempo total de $50000 fs$, passo de tempo de $0.1 fs$, em uma caixa com lado de $50\AA$ para obtermos a temperatura em Kelvin $K$, como visto no gráfico mostrado na Fig $9$.
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.8]{velocidades.png}
+\caption{Gráfico representando a evolução da temperatura pelo tempo em diferentes módulos para velocidade, no caso $V_1=Va$, $V_2=\frac{1}{2} V_a$, $V_3=2V_a$, $V_4=3V_a$, $V_5=\frac{1}{3} V_a$.}
+\end{figure}
+
+Depois de ver que o sistema criado obedece às condições esperadas, ou seja, obedece às leis da física, pudemos então buscar introduzir no mesmo código um cálculo que nos daria a pressão no sistema dentro das determinadas condições, desde que pudéssemos variar essas condições para que fosse possível observar o comportamento do gás dentro de cada situação proposta. Mas, dessa vez não tinhamos mais o objetivo de dar às partículas posicões iniciais aleatórias, pois assim o tamanho da caixa seria pre-determinado, como um cubo, onde em cada aresta possui o número de partícilas igua ao número de espaços". Definimos $d_{min}$ como a distância inicial entre cada átomo, $L$ a aresta da caixa e $Nar$ o número de partículas na aresta, para que fosse feito o seginte cálculo da densidade $\rho$
+
+Como
+
+$Nat=Nar^3$
+
+$L=d_{min}*Nar,$
+
+temos que
+\begin{equation}
+\rho=\dfrac{Nat}{L^3}=\dfrac{Nar^3}{(d_{min}*Nar)^3}
+\end{equation}
+
+assim temos que
+
+\begin{equation}
+\rho=\dfrac{1}{(d_{min})^3.}
+\end{equation}
+
+\paragraph{}
+onde podemos ver que a densidade do nosso sistema não dependerá do número de partículas mas apenas da distância $d_{min}$ entre elas. Foi determinado que ao ser executado, o programa deve pedir para que o usuário informe o tempo total "$Ttotal$", o número de partículas que haverá em cada aresta do cubo "$Nar$", o passo de tempo "$dt$", a distância entre as pertículas das arestas "$d_{min}$" e por fim, a velocidade inicial de cada partícula.
+\paragraph{}
+Diante das variáveis apresentadas, é necessário esclarecer que todas elas têm valores fixos, com exceção da distância entre as partículas para que pudesse ser criado um parâmetro a fim de observar o comportamento da pressão e da temperatura do sistema, conforme fosse se alterando a densidade, como pode ser visto nas Fig. $10$ e $11$.
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.6]{pressaodensidade.png}
+\caption{O gráfio acima apresenta a variação da pressão resultante do sistema após o programa ser rodado $30$ vezes, cada uma com uma densidade diferente, que vai de $0,005694 \AA^{-3}$ a $0,050805 \AA^{-3}$}
+\end{figure}
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.6]{tempdensidade.png}
+\caption{O gráfio acima apresenta a variação da temperatura resultante do sistema após o programa ser rodado $30$ vezes, cada uma com uma densidade diferente, que vai de $0,005694 \AA^{-3}$ a $0,050805 \AA^{-3}$}
+\end{figure}
+
+\paragraph{}
+Assim, pela equação dos gases ideais dada na eq. $16$, foi feita a divisão da pressão e volume pela constante de Boltzman e temperatura de modo que o resultado é uma constante que chamamos de Alpha($\alpha$, na eq.$17$), a qual é adimensional. Essa constante, em um gá ideal deverá ser igual a $1$, mas como o gás aqui simulado não se trata de um gás ideal, a Fig. $12$, nos mostra um gráfico contendo o valor das constantes de cada simulação, assim podemos observar as flutuações em torno desse número, das quais podemos entender que o sistema não é perfeito, mas está condizente com o real
+
+\begin{equation}
+P  V = N K_B T
+\end{equation}
+
+\begin{equation}
+\alpha=\dfrac{PV}{K_BT}
+\end{equation}
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.6]{contalpha.png}
+\caption{Neste gráfico temos o valor de cada constante $\alpha$ que foi obtida em cada uma das simulações, mostrando assim que o gás se aproxima do real visto que nenhum dos valores coincidiu com $1$, o valor da constante para gases ideais, embora estando bem próximo3.}
+\end{figure}
+
+
+Pudemos perceber através das Fig. $20$ e $21$ que a pressão de colapso do nanotubo aumenta de acordo com que vai diminuindo seu diâmetro, ou seja, quanto nemor seu tamanho maior sua resistência à pressão.
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.5]{Pc-d.pdf}
+\caption{Gráfico da relação pressão de colapso do nanotubo \textit{vs} o seu diâmetro}
+\end{figure}
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.5]{Bo-d.pdf}
+\caption{Gráfico da relação módulo de Bulk \textit{vs} o seu diâmetro }
+\end{figure}
+
+
+
+
+
+\section{Conclusões e Perspectivas}
+
+\paragraph{}
+Diante do que foi proposto neste relatório de dinâmica molecular, pode-se concluir que o estudo do potencial de interação entre partículas e a função radial de pares é essencial para quem deseja realizar uma simulação de um sistema real. O algoritmo de verlet é eficiente quando se trata de simular o movimento das partículas de um gás, possibilitando assim um estudo que envolve, força, energia cinética, temperatura, como foi visto neste relatório, e pressão em uma estrutura imersa nesse mesmo gás. Pudemos assim observar a variação da pressão de colapso segundo diferentes classificações de nanotubos, ao observarmos o comportamento da entalpia desse sistema comforme ocorre sua compressão.
+
+
+\newpage
+
+\begin{thebibliography}{}
+
+\bibitem{Madeira} MADEIRA, Lucas. A função radial de distribuição de pares para sistemas Lennard-Jones bidimensionais, 2012;
+
+\bibitem{Namba} NAMBA, A. M; DA SILVA, V. B.Dinâmica molecular: teoria e aplicações em planejamento de fármacos, 2008;
+
+\bibitem{Livro} M. P. Allen and D. J. Tildesley.Computer Simulation of Liquids(Clarendon Press, Oxford, 1989);
+
+\bibitem{Oliveira} OLIVERIA, R. C. M. T. Transformação estrutural induzida por presão: um estudo por dinâmica molecular, 2002;
+
+\bibitem{Gomes} GOMES, A. de Souza Filho;FAGAN, Solange Binotto. Funcionalização de Nanotubos de Carbono, 2007;
+
+\bibitem{Marce} DOS ANJOS, Marcelo Rodrigues.Estudo do Acoplamento em Nanotubos De Carbono e Duas e Três Camadas: Propriedades Mecânicas e Vibracionais.
+
+\bibitem{Haw} HERBST, Marcelo Hawrylak; MACÊDO, Maria Iaponeide Fernandes; ROCCO, Ana Maria. Tecologia dos Nanotubos de Carbono:Tendências e Perspectivas de uma Área Multidisciplinar.
+
+
+\end{thebibliography}
+
+\end{document}

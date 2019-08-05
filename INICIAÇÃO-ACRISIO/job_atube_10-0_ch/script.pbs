@@ -1,0 +1,74 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#
+## nodes = qtde de nos requisitada
+## ppn = qtde de cores por no
+#PBS -l nodes=1:ppn=8
+#
+## walltime = qtde de horas necessaria
+#PBS -l walltime=600:00:00
+#
+## Nome do job . Aparece na saida do comando 'qstat' .
+## E recomendado, mas nao necesssario, que o nome do job
+## o mesmo que o nome do arquivo de input
+#PBS -N tubo_10-0_c
+
+## Variaveis padronizadas para todos os jobs
+WRKDIR=$SCRATCH/$PBS_JOBID
+
+
+# procura o nome o input baseado no nome do job (linha #PBS -N xxx acima).
+INP="$PBS_JOBNAME.inp"
+
+
+## O diretorio que sera criado para rodar o job 
+## deve ser apagado quando o job terminar ?
+## Por padrao sera, se não colocar qualquer outro valor
+APAGA_SCRATCH=Y
+
+
+## informacoes do job no arquivo de saida
+qstat -an -u $USER
+cat $PBS_NODEFILE
+
+
+########################################
+#-------  Inicio do trabalho     ----- #
+########################################
+
+## Configura o no de calculo
+module load softwares/siesta/3.2-gnu-4.4 
+
+
+## Cria o diretorio em que o job rodara
+mkdir -p $WRKDIR
+
+
+## Transfere os inputs e arquivos necessarios 
+## para o diretorio do /scratch
+cd $PBS_O_WORKDIR
+
+cp -r * $WRKDIR/
+
+cd $WRKDIR
+
+
+mpirun -np $PBS_NP siesta < $INP > $PBS_JOBNAME-$PBS_JOBID.out
+
+# mpirun -np $PBS_NP transiesta < $INP > $PBS_JOBNAME-$PBS_JOBID.out
+
+cp -r $WRKDIR/ $PBS_O_WORKDIR/
+
+
+## Apaga o diretorio que o job rodou
+if [ "$APAGA_SCRATCH" = "Y" ]; then
+
+    rm -rf $WRKDIR
+
+else
+
+    echo -e "\nO diretorio \e[00;31m$WRKDIR\e[00m deve ser removido manualmente
+    para evitar problemas para outros jobs e/ou usuarios. \n"
+
+fi
+

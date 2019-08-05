@@ -1,0 +1,7 @@
+PROGRAM hello
+IMPLICIT NONE
+
+PRINT*,'Oi mundo!'
+
+
+END PROGRAM hello

@@ -1,0 +1,56 @@
+#!/bin/csh -f                                                                  
+
+
+
+set nat=640
+
+
+f77 -o coordenadas coordenadas.f
+f77 -o matriz matriz.f
+f77 -o ponto0 ponto0.f
+
+
+rm diagonal
+
+
+
+set ipm=1
+
+while ($ipm < 3)
+
+set iat=1
+
+while ($iat < $nat + 1)
+
+echo $iat
+
+set ixyz=1
+
+while ($ixyz < 4)
+
+rm indices
+
+echo $iat $ixyz $ipm | tee indices
+
+./coordenadas 
+
+./main
+
+rm Kij
+
+./matriz
+
+cat Kij >> diagonal
+
+@ ixyz = $ixyz + 1
+
+end
+
+@ iat = $iat + 1
+
+end
+
+@ ipm= $ipm + 1
+
+end
+

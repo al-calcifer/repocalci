@@ -1,0 +1,245 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.14)  4 AUG 2017 13:11
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"Relatorio Parcial 2017.tex"
+(./Relatorio Parcial 2017.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ansinew.def
+File: ansinew.def 2015/03/17 v1.2c Input encoding file
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(./Relatorio Parcial 2017.aux)
+\openout1 = `"Relatorio Parcial 2017.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks18
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+<federal.JPG, id=1, 144.54pt x 118.19156pt>
+File: federal.JPG Graphic file (type jpg)
+ <use federal.JPG>
+Package pdftex.def Info: federal.JPG used on input line 9.
+(pdftex.def)             Requested size: 115.63214pt x 94.55338pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./federal.JPG>] [2]
+(./Relatorio Parcial 2017.toc)
+\tf@toc=\write3
+\openout3 = `"Relatorio Parcial 2017.toc"'.
+
+ [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 84.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 84.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 84.
+ [4] [5]
+<potencial.png, id=22, 180.675pt x 176.66pt>
+File: potencial.png Graphic file (type png)
+ <use potencial.png>
+Package pdftex.def Info: potencial.png used on input line 105.
+(pdftex.def)             Requested size: 180.67455pt x 176.65956pt.
+
+<funcaoradial.jpg, id=24, 245.718pt x 205.36725pt>
+File: funcaoradial.jpg Graphic file (type jpg)
+ <use funcaoradial.jpg>
+Package pdftex.def Info: funcaoradial.jpg used on input line 115.
+(pdftex.def)             Requested size: 221.14415pt x 184.82881pt.
+
+[6 <./potencial.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 126.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
+LaTeX Font Info:    Font shape `OMS/cmr/m/sl' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 131.
+
+[7 <./funcaoradial.jpg>] <subrotina2.png, id=37, 503.63156pt x 543.53062pt>
+File: subrotina2.png Graphic file (type png)
+
+<use subrotina2.png>
+Package pdftex.def Info: subrotina2.png used on input line 152.
+(pdftex.def)             Requested size: 251.81516pt x 271.76463pt.
+ [8 <./subrotina2.png>]
+<velocidade-posicao.png, id=43, 441.14813pt x 153.57375pt>
+File: velocidade-posicao.png Graphic file (type png)
+
+<use velocidade-posicao.png>
+Package pdftex.def Info: velocidade-posicao.png used on input line 173.
+(pdftex.def)             Requested size: 220.57352pt x 76.78668pt.
+ <subrotina1.png, id=44, 620.3175pt x 517.935pt>
+File: subrotina1.png Graphic file (type png)
+
+<use subrotina1.png>
+Package pdftex.def Info: subrotina1.png used on input line 201.
+(pdftex.def)             Requested size: 310.15799pt x 258.96686pt.
+ [9 <./velocidade-posicao.png>]
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 210--211
+\OT1/cmr/m/n/12 qu^antica n^^Sos de-sprezamos os efeitos do am-bi-ente, ou seja
+, um sis-tema qu^antico
+ []
+
+[10 <./subrotina1.png>] [11]
+<ufpibrasao.jpeg, id=56, 181.67876pt x 280.04625pt>
+File: ufpibrasao.jpeg Graphic file (type jpg)
+ <use ufpibrasao.jpeg>
+Package pdftex.def Info: ufpibrasao.jpeg used on input line 221.
+(pdftex.def)             Requested size: 145.34319pt x 224.0373pt.
+
+[12 <./ufpibrasao.jpeg>] [13] (./Relatorio Parcial 2017.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1618 strings out of 494910
+ 23378 string characters out of 6179836
+ 79753 words of memory out of 5000000
+ 4897 multiletter control sequences out of 15000+600000
+ 8593 words of font info for 30 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 37i,6n,23p,930b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb>
+Output written on "Relatorio Parcial 2017.pdf" (13 pages, 280116 bytes).
+PDF statistics:
+ 91 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

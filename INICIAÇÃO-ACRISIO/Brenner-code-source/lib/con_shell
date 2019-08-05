@@ -1,0 +1,32 @@
+#!/bin/csh -f
+
+# Runs a program that reads directly from the keyboard under unix.
+# Such aprogram is typically produced using the congnu.f subroutines.
+
+# Usage: con_shell program
+
+# Do NOT use tcsh instead of csh in the first line above.
+
+# NOTE: csh will leave the terminal in a weird state when we
+# hit ^C during execution, hence the use of onintr.
+
+# NOTE: you may need to setenv TERM vt100 to get the arrow keys to work?
+# Emacs-type Ctrl-A, Ctrl-E, Ctrl-F and Ctrl-B should work in any case.
+
+# set default status to fail
+set stat="1"
+# disable exit on Ctrl-C
+onintr reset
+# set terminal in a raw state
+stty -icanon min 1 time 0 -echo
+# run the program
+$*
+set stat="$status"
+# reset terminal
+reset:
+stty icanon echo
+# re-enable Ctrl-C
+onintr
+# exit
+if ($stat) exit 1
+exit 0

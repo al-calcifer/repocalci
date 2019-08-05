@@ -1,0 +1,254 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.13)  12 JUL 2016 21:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"relatorio parcial novo.tex"
+(./relatorio parcial novo.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ansinew.def
+File: ansinew.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(./relatorio parcial novo.aux)
+\openout1 = `"relatorio parcial novo.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks18
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+<federal.JPG, id=1, 144.54pt x 118.19156pt>
+File: federal.JPG Graphic file (type jpg)
+ <use federal.JPG>
+Package pdftex.def Info: federal.JPG used on input line 9.
+(pdftex.def)             Requested size: 115.63214pt x 94.55338pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./federal.JPG>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 75.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 75.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 75.
+ [2] [3] [4]
+<fendatripla.jpg, id=23, 360.59718pt x 248.42813pt>
+File: fendatripla.jpg Graphic file (type jpg)
+ <use fendatripla.jpg>
+Package pdftex.def Info: fendatripla.jpg used on input line 114.
+(pdftex.def)             Requested size: 324.53445pt x 223.58325pt.
+
+[5 <./fendatripla.jpg>]
+Overfull \hbox (9.80742pt too wide) in paragraph at lines 139--142
+\OT1/cmr/m/n/12 Os n^^Sucleos $\OML/cmm/m/it/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x[]; t\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]; \OT1/cmr/m/n/12 0)$ e $\OML
+/cmm/m/it/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; t \OT1/cmr/m/n/12 + \OML/c
+mm/m/it/12 ^^\\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]; t\OT1/cmr/m/n/12 )$ s~ao 
+os propa-gadores de Schr^^?odinger
+ []
+
+[6]
+Overfull \hbox (25.26736pt too wide) detected at line 170
+[]\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; t; ^^\\OT1/cmr/m/n/1
+2 ) = \OML/cmm/m/it/12 A[] [] [] [] [] :
+ []
+
+[7]
+Package epstopdf Info: Source file: <INTC.eps>
+(epstopdf)                    date: 2016-07-12 18:41:18
+(epstopdf)                    size: 74368 bytes
+(epstopdf)             Output file: <INTC-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-12 18:44:52
+(epstopdf)                    size: 15085 bytes
+(epstopdf)             Command: <repstopdf --outfile=INTC-eps-converted-to.pdf 
+INTC.eps>
+(epstopdf)             \includegraphics on input line 194.
+Package epstopdf Info: Output file is already uptodate.
+ <INTC-eps-converted-to.pdf, id=36, 557.08125pt x 557.08125pt>
+File: INTC-eps-converted-to.pdf Graphic file (type pdf)
+
+<use INTC-eps-converted-to.pdf>
+Package pdftex.def Info: INTC-eps-converted-to.pdf used on input line 194.
+(pdftex.def)             Requested size: 222.82855pt x 222.82855pt.
+Package epstopdf Info: Source file: <gouy_sorkin.eps>
+(epstopdf)                    date: 2016-07-12 20:00:16
+(epstopdf)                    size: 67280 bytes
+(epstopdf)             Output file: <gouy_sorkin-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-12 20:03:50
+(epstopdf)                    size: 13451 bytes
+(epstopdf)             Command: <repstopdf --outfile=gouy_sorkin-eps-converted-
+to.pdf gouy_sorkin.eps>
+(epstopdf)             \includegraphics on input line 202.
+Package epstopdf Info: Output file is already uptodate.
+
+<gouy_sorkin-eps-converted-to.pdf, id=37, 557.08125pt x 557.08125pt>
+File: gouy_sorkin-eps-converted-to.pdf Graphic file (type pdf)
+
+<use gouy_sorkin-eps-converted-to.pdf>
+Package pdftex.def Info: gouy_sorkin-eps-converted-to.pdf used on input line 20
+2.
+(pdftex.def)             Requested size: 217.26082pt x 217.26082pt.
+ [8 <./INTC-eps-converted-to.pdf>]
+Overfull \hbox (25.59297pt too wide) in alignment at lines 211--213
+ [][][] []
+ []
+
+[9 <./gouy_sorkin-eps-converted-to.pdf>] [10]
+Overfull \hbox (0.56352pt too wide) in alignment at lines 295--298
+ [][][] []
+ []
+
+
+Overfull \hbox (3.79008pt too wide) in alignment at lines 300--312
+ [][][] []
+ []
+
+[11] [12] [13] [14] [15] [16] (./relatorio parcial novo.aux) ) 
+Here is how much of TeX's memory you used:
+ 1611 strings out of 494985
+ 22800 string characters out of 6180356
+ 90392 words of memory out of 5000000
+ 4827 multiletter control sequences out of 15000+600000
+ 7289 words of font info for 26 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 37i,9n,23p,1688b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "relatorio parcial novo.pdf" (16 pages, 196389 bytes).
+PDF statistics:
+ 104 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,229 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[ansinew]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}%inserir anexos
+\usepackage{amsmath,amsfonts,amssymb}%pacotes para termos matemáticos e símbolos
+\begin{document}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.8]{federal.JPG}
+\vspace{-20pt}
+\end{center}
+\end{figure}
+\vspace{-0.50cm}
+
+\begin{center}
+MINISTÉRIO DA EDUCAÇÃO - MEC \\
+UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI \\
+DEPARTAMENTO DE FÍSICA \\
+PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PRPPG \\
+COORDENADORIA GERAL DE PESQUISA - CGP \\
+PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIBIC - UFPI \\
+CAMPUS UNIVERSITÁRIO MINISTRO PETRÔNIO PORTELA - BLOCO 06 - BAIRRO
+ININGA CEP: 64049-550 - TERESINA-PI - BRASIL - FONE: (86) 3215-5564
+- FONE/FAX: (86) 3215-5560
+\end{center}
+
+%\begin{center}
+%\vspace{2.0cm} {\begin{center} {\textsc{Projeto de Pesquisa}}
+%\end{center}}
+%\end{center}
+\vspace{1.8cm}
+
+\begin{center}
+\Large{ \bf{Estudo computacional do efeito do meio compressor em nanotubos de carbono.}}
+\end{center}
+
+\vspace{1.20cm}
+
+
+\begin{center}
+Orientando: Antonio Lívio de Sousa Cruz - Física - DF - UFPI.
+\end{center}
+
+\begin{center}
+Orientador: Prof. Dr. Acrísio Lins de Aguiar - DF - UFPI.
+\end{center}
+
+
+\vspace{1.0cm}
+\begin{center}
+ Teresina - PI.
+\end{center}'	
+\begin{center}
+Fevereiro de 2017
+\end{center}
+
+\newpage
+
+%\maketitle
+
+
+
+
+
+
+\newpage
+
+\begin{center}
+\textbf{Resumo}
+\end{center}
+
+
+
+
+\vspace{0.5cm} Temos por objetivo estudar os efeitos do meio compressor em nanotubos de carbono, ou seja, a pressão que um fluido pode exercer nesta nanoesrutura de carbono em questão. Simulações computacionais serão usadas para o estudo do ordenamento espacial dessa matéria, sendo o algoritmo de Verlet o responsável pelo cálculo da dinâmica molecular de um fluido dentro de um sistema. Utilizaremos o algoritmo, primeiramente, para simular o movimento de um número arbitrário de partículas que irão representar as partículas que compõem o gás de argônio. Em seguida, adicionamos ao código um gerador de números aleatórios e as condições periódicas de contorno para que o sistema se aproxime ao máximo do real, para depois introuzirmos o potencial de Lenard-Jones, o que nos dará a força entre as partículas, a aceleração de cada uma delas, a energia cinética e a temperatura do sistema.
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introdução}
+\paragraph{} É de importância para a ciência o estudo das caracteristicas da matéria, como por exemplo, os seus estados sólido, líquido e gasoso, e como se encontra o odenamento espacial dos seus constituintes. A simulação feita por computadores é um método utilizado para compreender as propriedades dessa matéria.
+\paragraph{} No método da dinâmica molecular, as leis de Newton são aplicadas em átomos ou moléculas -- despresando os efeitos quânticos -- para que seja obtida a trajetória de um certo numero de particulas em um dado tempo, e assim calcuçar as propriedades de interesse do sistema. As simulações computacionais são importantes também por poderem reproduzir cenários difíceis, ou ate mesmo impossíveis de serem reproduzidos por experimentos.
+\paragraph{} Uma das ferramentas que podemos utilizar para investigar o ordenamento do sistema é a função radial depares. Neste trabalho iremos ilustrar o cálculo destafunção $g(r)$ para o Argônio bidimensional. Os aspectos essenciais deste sistema são razoavelmente bem capturados pelo modelo Lennard-Jones. A descrição de fluidos e sólidos, em algumas situações, deve ser feita em duas dimensões como, por exemplo, quando estão sendo investigados filmes finos. As simulações bidimensionais, por exigirem poucos recursos computacionais e facilitarem a visualização grafica de certas quantidade físicas, se tornam muito covenientes\cite{Madeira}.
+
+
+\newpage
+\section{Metodologia}
+
+Daremos início a uma introdução ao potencial que descreve a interação entre as partículas, o potencial de Lenard-Jones. A seguir discutiremos a teoria sobre a função radial de pares $g(r)$. Logo após, apresentaremos o conceitos que servem de base para a dinâmica molecular, abordando os algoritmos a serem usados, as condições periódicas de contorno e a convenção da mínima imagem. Seguiremos com os resultados obtidos. E, por fim, apresentaremos os resultados obtidos.
+\newpage
+
+
+
+\section{Potencial de interação entre partículas}
+
+\paragraph{} Considerando que trabalharemos com um sistema de $N$ partículas onde sua dinâmica pode ser tratada de forma clássica\cite{Madeira}. A interação entre as partículas depende da distância entre elas, logo, o potencial de Lennard-Jones descreve essas interações para diversos sistemas reais e será adotado
+
+\begin{equation}
+V(r)=4\epsilon\left[\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6}\right],
+\end{equation}
+
+\paragraph{} sendo que $\sigma$ é usado como unidade de comprimento, $\epsilon$ como de energia, $r$ é a distância entre as partículas e usando $m$ como parâmetro de massa. Na Fig. $1$ podemos ver esse potencial parametrizado para o Argônio, no qual podemos observar a parte atrativa, onde a energia tende a $0$(zero) e a distância é crescente, e a repulsia, onde $(r\longrightarrow{0})$.
+
+\begin{figure} [!hbt]
+\centering
+\includegraphics[scale=1.0]{potencial.png}
+\caption{Potencial de Lennard-Jones para o Argônio.}
+\end{figure}
+
+
+
+\section{Função radial de distribuição de pares}
+\paragraph{}
+ A função radial de distribuição de pares é uma medida de correlação entre as partículas de um sistema de muitos corpos\cite{Madeira}. Escolhendo uma das partículas como referencial(origem), pode-se obter o número médio de partículas a uma distância de $r$ a $r+dr$, que é $\rho g(r) dr$, sendo que $g(r)$ é a função radial de distribuição de pares, que funciona como uma "densidade local"\cite{Madeira}, ou seja, quando $g(r)=1$ essa é a densidade média do sistema, quando a função adquire valores mais altos a densidade local é maior, e quando adquire valores menores a densidade é menor que a média.
+ 
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.9]{funcaoradial.jpg}
+\caption{Uma partícula foi fixada na origem, e desenhamos as
+coroas circulares em relação a ela. O número de partículas em
+cada coroa da origem à função $g(r)$ resultante.}
+\end{figure}
+
+\section{Dinâmica molecular}
+\subsection{Algoritmo de Verlet}
+\paragraph{}
+	Para computar as tragetórias das N partículas e realizar a simulação de dinâmica molecular, é necessário um algoritmo\cite{Madeira} capaz de: 
+\begin{itemize}
+\item resolver numericamente as equações de Newton;
+\item calcular as posições e velocidades das partículas em um instante $t$ e $t+dt$;
+\item de permitir o uso de um $\Delta t$ relativamente grande;
+\item calcular as tragetórias clássicas com precisão;
+\item conservar energia e \sl momentum;
+\item ser reversível no tempo;
+\item ser computacionalmente não dispendioso.
+\end{itemize}
+
+\paragraph{} 
+Para o cálculo das tragetórias através do algoritmo de verlet serão utilizadas as equações de Newton para posição
+
+\begin{equation}
+x_{n+1}=x_n+v_n \Delta t+ \frac{1}{2} a_n (\Delta t)^2,
+\end{equation}
+e para velocidade
+\begin{equation}
+v_{n+1}=v_n+\frac{1}{2} (a_{n+1}+a_n) (\Delta t).
+\end{equation}
+
+ \subsubsection{Cálculo da posição e velocidade}
+
+\paragraph{} Serão utilizadas também funções do próprio algoritmo para realizar o cálculo -- classicamente -- do deslocamento das partículas:
+
+\begin{equation}
+r(t+\Delta t)= 2r(t)-r(t-\Delta t)+a(t)\Delta t^2+O(\Delta t)^4
+\end{equation}
+
+e também,
+\begin{equation}
+v(t)=\frac{r(t+\Delta t)-r(t-\Delta t)}{2\Delta t}, 
+\end{equation}
+
+onde ambas as equações $(4)$ e $(5)$ serão utilizadas diretamente nos cálculos feitos na linguagem de programação Fortran(90), que foi a utilizada para realizar a simulação em questão, representado na imagem abaixo.
+
+\begin{figure} [!hbt]
+ \centering
+ \includegraphics[scale=1.0]{velocidade-posicao.png}
+ \caption{Cálculo da posição($rt$) e da velocidade($vt$), através das equações $(4)$ e $(5)$, utilizando Fortran 90.}
+ \end{figure}
+
+ \subsubsection{Cálculo da força através do potencial de Lennard-Jones e da aceleração}
+
+\paragraph{} Tal força pode ser obtida através do gradiente do potencial de interação como mostrado na equação
+
+\begin{equation}
+ F(r)=\nabla V(r)=\frac{24\epsilon}{r}\left[2\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6}\right]\^r,
+\end{equation}
+
+onde podemos perceber que foi nessessário o cálculo da distância entre cada partícula.
+
+As componentes da acelerações $a_n$ são obtidas através da Segunda Lei de Newton, utilizando massa atômica do argônio e as componentes da força
+
+\begin{equation}
+a_n^x=\fra{F(r)^x}{m}
+a_n^y=\fra{F(r)^y}{m}
+a_n^z=\fra{F(r)^z}{m}
+\end{equation}
+
+\begin{figure} [!hbt]
+ \centering
+ \includegraphics[scale=1.0]{.png}
+ \caption{}
+ \end{figure}
+
+\subsection{Reflexões nas paredes versus Condições Periódicas de Contorno}
+
+\paragraph{}
+Ao realizar uma simulação de um sistema físico com uma ordem de $10^{2}-10^{6}$ partículas, pode-se observar um efeito indesejado causado pelas superfídies da caixa de simulação\cite{Namba}. Esse fato demonstra que considerar a reflexão das partículas nas "paredes" do sistema se torna inapropriado, e como forma de extinguir esses efeitos causados pelas bordas, admitiu-se as condições periódicas de contorno\cite{Livro}. Um resultado disto é que sempre que uma partícula deixa a célula de simulação, é substituída por outra com exatamente a mesma velocidade e que entra pela face da célula oposta, um efeito rotativo\cite{Oliveira}. Assim, o número de partículas na célula é conservado, de maneira que o sistema total forma um contínuo. Além disso, nenhuma partícula sente qualquer efeito de superfície, pois esses são removidos completamente. A Fig.$4$ demostra o funcionamento das condições periódicas de contorno.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{condicoesdecontorno.png}
+\caption{A célula de simulação principal é replicada, assim como as partículas que a compõem. No momento que uma partícula deixa uma célula, esta deverá aparecer na célula adjacente, conservando sua velocidade e o número de partículas em cada célula\cite{Oliveira}.}
+\end{figure}
+
+
+
+\section{Conclusões e Perspectivas}
+Diante do que foi proposto neste relatório de dinâmica molecular, pode-se concluir que o estudo do potencial de interação entre partículas e a função radial de pares é essencial para quem deseja realizar uma simulação. O algoritmo de verlet é eficiente quando se trata de simular o movimento das partículas de um gás, possibilitando assim um estudo que envolve pressão em uma estrutura imersa nesse mesmo gás. Tudo o que foi visto aqui serve como base para um estudo mais aprofundado sobre o efeito do meio compressor em nanotubos de carbono, podendo, assim, ser visto como uma introdução.
+
+
+\newpage
+
+\begin{thebibliography}{}
+
+\bibitem{Madeira} MADEIRA, Lucas. A função radial de distribuição de pares para sistemas Lennard-Jones bidimensionais, 2012;
+
+\bibitem{Namba} NAMBA, A. M; DA SILVA, V. B.Dinâmica molecular: teoria e aplicações em planejamento de fármacos, 2008;
+
+\bibitem{Livro} M. P. Allen and D. J. Tildesley.Computer Simulation of Liquids(Clarendon Press, Oxford, 1989);
+
+\bibitem{Oliveira} OLIVERIA, R. C. M. T. Transformação estrutural induzida por presão: um estudo por dinâmica molecular, 2002.
+
+
+\newpage
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Introdu\c c\~ao}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {section}{\numberline {2}Metodologia}{5}
+\contentsline {section}{\numberline {3}A hip\'otese de de Broglie}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {4}Experimento Dupla Fenda }{7}
+\contentsline {section}{\numberline {5}Pacote de Onda}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {subsection}{\numberline {5.1}Pacote de Onda Unidimensional}{8}
+\contentsline {section}{\numberline {6}Conclus\~oes e Perspectivas}{9}
+\contentsline {section}{\numberline {7}Agradecimentos}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {section}{\numberline {8}Ap\^endice 1: Coeficientes das fun\c c\~oes de onda cl\'assica $\psi _1$, $\psi _2$ e $\psi _3$}{14}
+\contentsline {section}{\numberline {9}Ap\^endice 2: Coeficientes da fun\c c\~ao de onda n\~ao cl\'assica $\psi _{nc}$}{15}
+\contentsline {section}{\numberline {10}Publica\c c\~oes de Artigos}{18}

@@ -1,0 +1,5 @@
+2148 74.0 / Number of PTM particles and lattice parameter x,y
+30 0 / Indices n,m SWCNT
+2 1 5/ N=#de Repeticoes do bundle em x, M=#de repeticoes em y, L=#de repeticoes em z
+30.094595 26.0626831 21.2099915 /parametros de rede fornecidos by user, se abaixo for 0 coloque qualquer coisa (1.0 1.0 1.0) 
+0  / 0=parametros de rede sugerido pelo programa,  1=parametros fornecidos by user (linha acima)

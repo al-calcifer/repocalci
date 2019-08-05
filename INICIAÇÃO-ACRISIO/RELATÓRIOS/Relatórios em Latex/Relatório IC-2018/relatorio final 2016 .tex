@@ -1,0 +1,487 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\begin{document}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.8]{federal.JPG}
+\vspace{-20pt}
+\end{center}
+\end{figure}
+\vspace{-0.50cm}
+
+\begin{center}
+MINISTÉRIO DA EDUCAÇÃO - MEC \\
+UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI \\
+DEPARTAMENTO DE FÍSICA \\
+PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PRPPG \\
+COORDENADORIA GERAL DE PESQUISA - CGP \\
+PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIBIC - UFPI \\
+CAMPUS UNIVERSITÁRIO MINISTRO PETRÔNIO PORTELA - BLOCO 06 - BAIRRO
+ININGA CEP: 64049-550 - TERESINA-PI - BRASIL - FONE: (86) 3215-5564
+- FONE/FAX: (86) 3215-5560
+\end{center}
+
+%\begin{center}
+%\vspace{2.0cm} {\begin{center} {\textsc{Projeto de Pesquisa}}
+%\end{center}}
+%\end{center}
+\vspace{1.8cm}
+
+\begin{center}
+\Large{ \bf{Propagador para uma particula quântica interagindo com um reservatório}}
+\end{center}
+
+\vspace{1.20cm}
+
+
+\begin{center}
+Orientando: Marcondes Tiburcio da Silva Junior - Física - DF - UFPI.
+\end{center}
+
+\begin{center}
+Orientador: Prof. Dr. Irismar Gonçalvez da Paz - DF - UFPI.
+\end{center}
+
+
+\vspace{1.0cm}
+\begin{center}
+ Teresina - PI.
+\end{center}
+\begin{center}
+Fevereiro de 2017
+\end{center}
+
+\newpage
+
+%\maketitle
+
+
+
+
+
+
+\newpage
+
+\begin{center}
+\textbf{Resumo}
+\end{center}
+
+
+
+
+\vspace{0.5cm} Propomos aqui um breve estudo sobre a mecânica quântica e seus fundamentos, nela estudamos sistemas quânticos que não sofrem influencia do meio externo. A evolução no tempo para uma partícula quântica que não interage pode ser feita via propagador de Schrdinger para uma partícula livre. Para uma partícula que interage com o meio externo o propagador fica alterado. Nos problemas usuais da mecânica quântica a barreia potencial é clássica, ou seja, não há perda de coerência entre a partícula e o meio externo. Pretendemos neste trabalho calcular o propagador para uma partícula que interage com um reservatório específico, ou seja temos o efeito de perda de coerência entre a partícula e o reservatório.
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introdução}
+\paragraph{} Até o final do século XIX a física podia ser dividida em quatro grandes áreas: a mecânica clássica, a termodinâmica, o eletromagnetismo e a óptica. Os físicos buscavam a unificação das teorias, como já havia a junção da mecânica com a termodinâmica (Mecânica Estatística), e do eletromagnetismo com a óptica, então uma busca a teoria unificada acontecia entre os físicos que acreditavam que tinham alcançado uma descrição final da natureza. Desafiada logo em seguida pelo domínio relativístico e pelo domínio microscópico descobriu-se que a física clássica falha na explicação necessária de fenômenos recém descobertos. Entre os fenômenos não explicados estão a radiação do corpo negro e efeito fotoelétrico, peças importantes no surgimento da física quântica. Veremos que o fracasso da física clássica abriu caminho para novas ideias.
+\paragraph{} Primeiro avanço veio no inicio do seculo XX quando Max Planck introduziu o conceito de quantização de energia. Em seus esforços para explicar o fenômeno da radiação do corpo negro, ele argumentou que a troca de energia entre uma onda eletromagnética de frequência $f$ e matéria ocorre apenas em múltiplos inteiros de $hf$, que chamou de energia de um quantum, onde $h$ é uma constante fundamental chamada constante de Planck. Em 1905, Einstein, usando a hipótese quântica de Planck sobre a quantização de energia usada para resolver o problema da radiação do corpo negro, conseguiu explicar o efeito fotoelétrico. Segundo Einstein a luz era constituída de pacotes discretos de energia $hf$, tais que esses pacotes são chamados de fótons e que a energia necessária para remover o elétron variava de metal para metal. No efeito fotoelétrico o elétron pode ganhar energia ao absorver um fóton. No efeito Compton, por sua vez,  o elétron pode perder energia emitindo fótons, essa teoria foi observado em 1922 por Arthur Compton no seu experimento de espalhamento de raios-X. Compton observou que se o espalhamento fosse considerado uma colisão entre um fóton e um elétron, o elétron absorveria energia do fóton incidente e nesse caso a energia do fóton difratado seria menor do que a do fóton incidente.
+
+
+\newpage
+\section{Metodologia}
+
+
+\newpage
+
+\section{A hipótese de de Broglie}
+
+\paragraph{} Após a explicação de Einstein sobre o efeito fotoelétrico, da quantização de energia proposta por Max Planck e da teoria de Niels Bohr sobre o átomo de hidrogênio em que ele afirma que os elétrons com carga negativa gira em torno do núcleo com carga positiva a dualidade onda-partícula da luz já era bem aceito pela comunidade cientifica. Em 1924, Louis de Broglie, com base no efeito fotoelétrico, propôs que o dualismo onda partícula, que até então valia apenas no caso da radiação, também era uma propriedade da matéria, visto que os elétrons e todas as outras partículas apresentavam fenômenos como interferência e difração, imaginou ele que havia uma simetria entre o comportamento de fótons e elétrons.  Sua hipótese matemática foi expressa através de equações para a frequência e comprimento de onda das ondas de matéria. As relações de de Broglie são expressas da seguinte forma, sendo $E$ a energia da partícula, $p$ o momento e $\lambda$ o comprimento de onda da partícula, temos: 
+
+\begin{equation}\label{11}
+f=\frac{E}{h}
+\end{equation}
+
+\begin{equation}\label{12}
+\lambda=\frac{h}{p}
+\end{equation}  
+
+Através desta hipótese, de Broglie conseguiu deduzir a condição de quantização de Bohr e que essa quantização leva a formação de uma onda estacionária.
+
+\begin{equation}
+mvr=n\hbar=\frac{nh}{2\pi}
+\end{equation}
+para n (número de onda inteiro) inteiro.
+
+\begin{equation}\label{1}
+2\pi r=\frac{nh}{mv}=\frac{nh}{p}= cincunferencia  da  orbita
+\end{equation}
+
+\paragraph{} As ideias de de Broglie foram ampliadas por Erwin Schrödinger e comprovada experimentalmente por C.J. Davisson e L.H. Germer em 1927. Davisso-Germer lançaram elétrons num alvo de níquel e descobriram que a intensidade do feixe refletido apresentava máximos e mínimos. Observaram também que na superfície do níquel haviam formados grandes monocristais e o que estavam observando era a difração do elétron.
+
+\section{Experimento Dupla Fenda }
+
+
+\section{Pacote de Onda}
+
+\paragraph{} Vimos anteriormente que a luz, antes tratada somente como um fenômeno ondulatório, apresenta propriedades de uma partícula na interação com a matéria, efeito fotoelétrico e efeito Compton comprovaram tais fenômenos. Mais tarde De Broglie, com base no efeito fotoelétrico, afirmou que todas as partículas apresenta fenômenos ondulatórios, como interferência e difração.
+\paragraph{} Todo fenômeno pode ser descrito por uma função de onda. A função de onda da luz é o campo elétrico que é a solução da equação de onda clássica
+\begin{equation}
+\frac{\partial^2 y}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2 y}{\partial t^2}
+\end{equation}
+ 
+Um exemplo importante de ondas classicas são as ondas harmonicas de amplitude $y_0$, frequência $f$ e periodo $T$, que se propagam de acordo com a equação
+\begin{equation}
+y(x,t)=y_0(kx-\omega t)=y_0\cos 2\pi\left(\frac{x}{\lambda}-\frac{t}{T}\right)=y_0\cos\frac{2\pi}{\lambda}(x-vt)
+\end{equation}
+
+Uma única onda harmônica não pode ser localizada no  tempo e no espaço, logo não pode descrever o pulso, cujo sua principal característica é o fato de de ser um fenômeno localizado no tempo e no espaço, porem o pulso pode ser representado por um conjuntos de ondas harmônicas de diferentes frequências e comprimentos de onda. Esse grupo de funções harmônica e conhecido como pacote de ondas. Quando há uma superposição de duas ondas de mesma amplitude e frequências muito próximas acontece o fenômeno conhecido como batimento. Sejam $k_1$ e $k_2$ duas ondas senoidais, $\omega_1$ e $\omega_2$ suas frequências angulares e $v_1$ e $v_2$ suas velocidades, a soma das duas ondas é dada pela equação
+
+$$\psi(x,t)=y_0\cos(k_1x-\omega_1t)+y_0\cos(k_2x-\omega_2t)$$
+
+Aplicando mudanças trigonométricas, obtemos
+
+$$\psi(x,t)=2A\cos\left[\frac{(k_1-K_2)x-(\omega_1-\omega_2)t}{2}\right]\cos\left[\frac{k_1+k_2}{2}-\left(\frac{\omega_1+\omega_2}{2}\right)t \right]$$
+
+Def: $\Delta k=k_1-k_2$, $\bar{k}=\frac{k_1+k_2}{2}$, $\Delta \omega=\omega_1-\omega_2$, $\bar{\omega}=\frac{\omega_1+\omega_2}{2}$.
+
+Logo definimos a equação como
+
+\begin{equation}
+\psi(x,t)=2A\cos\left[\frac{\Delta k}{2}-\left(\frac{\Delta \omega}{2}\right)t\right]\cos(\bar{k}x-\bar{\omega}t)
+\end{equation}
+
+Na figura (1) temos o gráfico de $\psi(x,t)$ para $t=0$. Duas ondas senoidais de frêquencias próximas e número de ondas diferentes se interferindo e ambas estã se movimentando no eixo $x$. A culva tracejada é a envoltória da soma das duas ondas e é dada pelo cosseno da equação (7).Escrevendo o termo do cosseno da seguinte forma
+
+$$\cos\left\lbrace\frac{1}{2}\Delta k[x-\left(\frac{\Delta\omega}{\Delta k}\right)t\right\rbrace$$
+
+Vemos que a envoltória se propaga com velocidade $\frac{\Delta \omega}{\Delta k}$. Essa velocidade recebe o nome de velocidade de grupo e é representaa pelo símbolo $v_g$.
+
+\begin{figure} [!hbt]
+\centering
+\includegraphics[scale=0.7]{pacotedeonda.png}
+\caption{Soma de duas ondas senoidais}
+\end{figure}
+
+\subsection{Pacote de Onda Unidimensional}
+
+Vamos considerar um pacote de onda Gaussiano
+
+$$\psi(x,0)=\frac{1}{\sqrt[]{2\pi}}\int_{-\infty}^\infty dk g(k,0)\exp(ikx)$$
+
+\newpage
+
+\section{Conclusões e Perspectivas}
+Nós estudamos os efeitos de um caminho não clássico no padrão de interferência no experimento de fenda tripla. Resolvemos exatamente , em uma dimensão, a propagação através da fenda tripla , bem como, obtivemos uma expressão analítica para as funções de onda de caminhos clássicos e não clássicos. Obtivemos uma formula exata para o parâmetro de Sorkin, responsável por quantificar o efeito dos caminhos não clássicos. O valor estimado para $k$ usando ondas de elétrons, foi consistente com os valores previamente estabelecidos na literatura, o que proporciona credibilidade a nossa maneira de tratar o estudo de caminhos não clássicos. Nós utilizamos o princípio da incerteza em momento, para estimar o tempo de propagação entre as fendas de um caminho não clássico, fruto do formalismo das integrais de caminho de Feynman. As fase de Gouy clássica, e não clássica são distintas e dão contribuições significativas para uma estimativa do parâmetro $k$. Foi também observado a mudança no comportamento de $k$ em função da diferença de fase de Gouy para ondas de elétrons. Estimamos um erro percentual de $51.5\%$ no valor absoluto do parâmetro de Sorkin $k$, como consequência da diferença de fase de Gouy em $x=0$, $t=18$ ns, e $\tau=2$ ns. Portanto nós concluímos, com base na enorme discrepância encontrada, que a diferença de fase de Gouy não pode ser negligenciada em um experimento de fenda tripla, onde trajetórias não clássicas são consideradas. Como perspectiva, utilizaremos nosso resultado que conecta fase de Gouy e o parâmetro $k$, para detectar o efeito de trajetórias não clássicas através da medida da fase de Gouy. 
+
+
+
+
+\newpage
+\section{Agradecimentos}
+Gostaria de agradecer primeiramente a Deus, por ter me dado a oportunidade de estar vivo e poder desfrutar das belezas da vida e da sociedade acadêmica de Física, a minha família, em especial a minha mãe por sempre me apoiar. Não poderia deixar de agradecer, ao meu professor e orientador pelos ensinamentos, paciência e oportunidades. Assim como meus amigos de curso, Fabrício Ribeiro Lustosa, Lucas Soares Marinho, Oziel Ribeiro, que sempre estiveram presentes nos dias de ``lutas e glórias". Portanto, de forma geral, agradeço a todos que direto ou indiretamente ajudaram na realização desse trabalho. 
+
+\paragraph{} Agradeço a UFPI, CAPES e CNPq pelo apoio logístico e financeiro
+prestado no decorrer da pesquisa,
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=0.7]{federal.JPG}
+\caption{UFPI}
+\end{figure}
+
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=1.5]{capes.png}
+\caption{Capes}
+\end{figure}
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=0.1]{cnpq.jpg}
+\caption{CNPq}
+\end{figure}
+
+\newpage
+
+\begin{thebibliography}{}
+
+\bibitem{1} L. G. Gouy, C. R. Acad. Sci. Paris 110, 1251 (1890).
+
+\bibitem{2} L. G. Gouy, Ann. Chim. Phys. Ser. 6 24, 145 (1891).
+
+\bibitem{3} T. D. Visser and E. Wolf, Opt. Comm. 283, 3371 (2010).
+
+\bibitem{4} R. Simon and N. Mukunda, Phys. Rev. Lett. 70, 880
+(1993).
+
+\bibitem{5} S. Feng and H. G. Winful, Opt. Lett. 26, 485 (2001).
+
+\bibitem{6} J. Yang and H. G. Winful, Opt. Lett. 31, 104 (2006).
+
+\bibitem{7} R. W. Boyd, J. Opt. Soc. Am. 70, 877 (1980).
+
+\bibitem{8} P. Hariharan and P. A. Robinson, J. Mod. Opt. 43, 219
+(1996).
+
+\bibitem{9} S. Feng, H. G. Winful, and R. W. Hellwarth, Opt. Lett.
+23, 385 (1998).
+
+\bibitem{10} X. Pang, T. D. Visser, and E. Wolf, Opt. Comm. 284,
+5517 (2011); X. Pang, G. Gbur, and T. D. Visser, Opt.
+Lett. 36, 2492 (2011); X. Pang, D. G. Fischer, and T. D.
+Visser, J. Opt. Soc. Am. A 29, 989 (2012); X. Pang and
+T. D. Visser, Opt. Exp. 21, 8331 (2013); X. Pang, D. G.
+Fischer, and T. D. Visser, Opt. Lett. 39, 88 (2014).
+
+
+\bibitem{11} C. J. S. Ferreira, L. S. Marinho, T. B. Brasil, L. A.
+Cabral, J. G. G. de Oliveira Jr, M. D. R. Sampaio, and
+I. G. da Paz, Ann. of Phys. 362, 473 (2015).
+
+\bibitem{12} D. Chauvat, O. Emile, M. Brunel, and A. Le Floch, Am.
+J. Phys. 71, 1196 (2003).
+
+\bibitem{13} N. C. R. Holme, B. C. Daly, M. T. Myaing, and T. B.
+Norris, Appl. Phys. Lett. 83, 392 (2003).
+
+\bibitem{14} W. Zhu, A. Agrawal, and A. Nahata, Opt. Exp. 15, 9995
+(2007).
+
+\bibitem{15}T. Feurer, N. S. Stoyanov, D. W. Ward, and K. A. Nelson,
+Phys. Rev. Lett. 88, 257 (2002).
+
+\bibitem{16} A. Hansen, J. T. Schultz, and N. P. Bigelow, Confer-
+ence on Coherence and Quantum Optics Rochester (New
+York, United States, 2013); J. T. Schultz, A. Hansen, and
+N. P. Bigelow, Opt. Lett. 39, 4271 (2014).
+
+\bibitem{17} G. Guzzinati, P. Schattschneider, K. Y. Bliokh, F. Nori,
+and J. Verbeeck, Phys. Rev. Lett. 110, 093601 (2013).
+
+\bibitem{18} T. C. Petersen, D. M. Paganin, M. Weyland, T. P. Sim-
+ula, S. A. Eastwood, and M. J. Morgan, Phys. Rev. A
+88, 043803 (2013).
+
+\bibitem{19} A. E. Siegman, Lasers, University Science Books, Sausal-
+ito CA, 1986.
+
+\bibitem{20} Ph. Balcou and A. L. Huillier, Phys. Rev. A 47, 1447
+(1993); M. Lewenstein, P. Salieres, and A. L. Huillier,
+Phys. Rev. A 52, 4747 (1995); F. Lindner, W. Stremme,
+M. G. Schatzel, F. Grasbon, G. G. Paulus, H. Walther,
+R. Hartmann, and L. Struder, Phys. Rev. A 68, 013814
+(2003).
+
+\bibitem{21} F. Lindner, G. Paulus, H. Walther, A. Baltuska, E.
+Goulielmakis, M. Lezius, and F. Krausz, Phys. Rev. Lett.
+92, 113001 (2004).
+
+\bibitem{22} L. Allen, M. W. Beijersbergen, R.J.C. Spreeuw, and J.P.
+Woerdman, Phys. Rev. A 45, 8185 (1992); L. Allen, M.
+Padgett, and M. Babiker, Prog. Opt. 39, 291 (1999).
+
+\bibitem{23}S. Sato and S. Kawamura, Journal of Physics: Conference
+Series 122, 012025 (2008).
+
+\bibitem{24} I. G. da Paz, M. C. Nemes , S. Padua, C. H. Monken, and
+J.G. Peixoto de Faria, Phys. Lett. A 374, 1660 (2010).
+
+\bibitem{25} I. G. da Paz, P. L. Saldanha, M. C. Nemes, and J. J.
+Peixoto de Faria, New J. of Phys. 13, 125005 (2011).
+
+\bibitem{26} R. Ducharme and I. G. da Paz, Phys. Rev. A 92, 023853
+(2015).
+
+\bibitem{27} H. Yabuki, Int. J. Theor. Ph. 25, 159 (1986).
+
+\bibitem{28} R. P. Feynman and A. R. Hibbs, Quantum Mechanics and
+Path Integrals (McGraw-Hill, New York, 3rd. ed. 1965).
+
+\bibitem{29} R. D. Sorkin, Mod. Phys. Lett. A 09, 3119 (1994).
+
+\bibitem{30} U. Sinha, C. Couteau, T. Jennewein, R. Laflamme, and
+G. Weihs, Science 329, 418 (2010).
+
+\bibitem{31} H. D. Raedt, K. Michielsen, and K. Hess, Phys. Rev. A
+85, 012101 (2012).
+
+\bibitem{32} R. Sawant, J. samuel, A. Sinha, S. Sinha, and U. Sinha,
+Phys. Rev. Lett. 113, 120406 (2014).
+
+\bibitem{33} A. Sinha, A. H. Vijay, and U. Sinha, Scientific Reports
+5, 10304 (2015).
+
+\bibitem{34} J. S. M. Neto, L. A. Cabral, and I. G. da Paz, Eur. J.
+Phys. 36, 035002 (2015).
+
+\bibitem{35} O. C. O. Dahlsten, A. J. P. Garner, and V. Vedral, Nat.
+Commun. 5, 4592 (2014).
+
+\bibitem{36} O. C. O. Dahlsten, A. J. P. Garner, and V. Vedral, Nat.
+Commun. 5, 4592 (2014).
+
+
+\newpage
+\end{thebibliography}
+
+
+
+
+
+\newpage
+\section{Apêndice 1: Coeficientes das funções de onda clássica $\psi_1$, $\psi_2$ e $\psi_3$}
+Os coeficientes abaixo são correspondentes as equações (\ref{8})-(\ref{8})
+\begin{eqnarray}
+A=\frac{m}{2\hbar\sqrt{\sqrt{\pi}}t\tau\sigma0}\left[\left(\frac{m^2}{4\hbar^2t\tau} -    \frac{1}{4\beta^2\sigma0^2}\right)^2+\frac{m^2}{16\hbar^2}\left(\frac{1}{\beta^2t}+ \frac{1}{\sigma0^2t}+\frac{1}{\sigma0^2\tau} \right)^2 \right]^{-1/4},
+\end{eqnarray}
+
+\begin{equation}
+\mu_{c}=-\frac{1}{2}\arctan\left[\frac{t+\tau(1+\frac{\sigma_0^2}{\beta^2})}{\tau_0(1-\frac{t\tau\sigma_0^2}{\tau_0^2\beta^2})}\right],
+\end{equation}
+
+\begin{equation}
+\theta_{c}=-\frac{d^2}{2}\left[\frac{2m\hbar\left(\tau^2\hbar^2t+t^2\hbar^2\tau+m^2\sigma0^4\tau \right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+\gamma_c=\frac{1}{2}\left[\frac{m\hbar\left(-2t^2d\hbar^2\tau -2m^2\sigma0^2d\tau\beta^2-2m^2\sigma0^4\tau d\right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+\alpha_c=\frac{1}{2}\left[\frac{m\hbar\left(t^2\hbar^2\tau+m^2\tau\beta^4+2m^2\sigma0^2\beta^2\tau+
+m^2\sigma0^4\tau+m^2\sigma^4\tau\right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+C1=-\frac{1}{2}\left[\frac{m^2 \left(\beta^4m^2\sigma0^2+\sigma0^4m^2\beta^2+
+\hbar^2t^2\beta^2\right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+C2=-\frac{1}{2}\left[\frac{m^2 \left(-2\sigma0^4dm^2\beta^2-2\hbar^2td\beta^2\tau-2
+\hbar^2t^2d\beta^2\right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+C3=-\frac{1}{2}\left[\frac{m^2\left(\sigma_0^4m^2\beta^2+\hbar\tau^2\beta^2+
+\hbar^2\tau^2\sigma_0^2+2\hbar^2\tau\beta^2t+\hbar^2t^2\beta^2\right)}{\Pi}\right],
+\end{equation}
+
+\begin{equation}
+\Pi=\hbar^4\tau^2t^2+m^2\hbar^2\left[(t+\tau)^2\beta^4+2\tau^2\beta^2\sigma_0^2+\tau^2
+\sigma_0^4\right]+m^4\hbar^4\sigma_0^4.
+\end{equation}
+
+
+\section{Apêndice 2: Coeficientes da função de onda não clássica $\psi_{nc}$}
+
+\begin{equation}
+A_{nc}=\sqrt{\frac{m^3\sqrt{\pi}}{16\hbar^3t\tau\varepsilon\sigma_0\sqrt{z_R^2+z_I^2}}}
+\end{equation}
+
+
+
+\begin{equation}
+\mu_{nc}=-\frac{1}{2}\arctan\left(\frac{z_I}{z_R} \right),
+\end{equation}
+
+\begin{equation}
+\theta_{nc}=\frac{m\hbar}{2}  \left(\frac{\eta }{\xi}\right)d^2,
+\end{equation}
+
+\begin{equation}
+\gamma_{nc}=\frac{m\hbar}{2}\left(\frac{\Delta}{\xi}\right),
+\end{equation}
+
+
+\begin{equation}
+\alpha_{nc}=\frac{m\hbar}{2}\left(\frac{\Lambda}{\xi}\right),
+\end{equation}
+
+\begin{equation}
+C1_{nc}=-\frac{m^2}{2}\left(\frac{\varphi}{\xi}\right),
+\end{equation}
+
+
+\begin{equation}
+C2_{nc}=-\frac{m^2}{2}\left(\frac{\omega}{\xi}\right),
+\end{equation}
+
+\begin{equation}
+C3_{nc}=-\frac{m^2d^2}{2}\left(\frac{\Omega}{\xi}\right),
+\end{equation}
+
+\begin{eqnarray}
+z_I=-\beta^{6}m^4\sigma_0^2+3\hbar^2m^2\beta^2\left[\frac{4}{3}\varepsilon^2+(2t+2\tau)\varepsilon+\tau t\right] \nonumber\\+8\hbar^2\varepsilon\sigma_0^2m^2\beta^2\left(\frac{\varepsilon+\tau}{2}\right)-4\hbar^4\varepsilon^2\tau t
+\end{eqnarray}
+
+\begin{eqnarray}
+z_R=m\hbar \beta^2\left[m^2\beta^6\left(\tau+4\varepsilon+t\right)+3m^2\sigma_0^2\beta^4(\tau+
+2\varepsilon)-8\hbar^2\varepsilon\left(\frac{\tau}{2}+\frac{t}{2}+\tau t  \right) \right]
+\end{eqnarray}
+
+\begin{eqnarray}
+\eta=8\beta^4\hbar^2m^4\sigma_0^4\varepsilon^3+
+4\beta^8\hbar^2m^4t^2\varepsilon+16\beta^8\hbar^2m^4t\varepsilon^2+4\beta^8m^6\sigma_0^4
+\varepsilon+16\hbar^6\tau^2t^2\varepsilon^3\nonumber \\ 16\hbar^6\tau^2t\varepsilon^4+16\hbar^6\tau t^2\varepsilon^4+4\hbar^2\tau^2\beta^8\varepsilon+16\hbar^2\tau m^4\beta^8\varepsilon^2+8\hbar^4\tau^2 m^2\beta^4\varepsilon^3\nonumber  \\+16\hbar^4\tau m^2\beta^4\varepsilon^4+8\beta^4\hbar^4m^2t^2\varepsilon^3+16\hbar^4t m^2\beta^4\varepsilon^4+16\hbar^4\tau^2 m^2\sigma_0^4\varepsilon^3\nonumber \\+16\hbar^4\hbar^4\tau m^2\sigma_0^4\varepsilon^4+8\beta^8\hbar^2\tau m^4t\varepsilon+24\beta^6\hbar^2\tau^2 m^4\sigma_0^2\varepsilon+48\beta^6\hbar^2\tau m^4\sigma_0^2\varepsilon^2\nonumber \\ +36\beta^4\hbar^4\tau^2m^2t^2
+\varepsilon+44\beta^4\hbar^4\tau^2m^2t
+\varepsilon^2+44\beta^4\hbar^4\tau m^2 t^2
+\varepsilon^2+32\beta^4\hbar^4\tau m^2 t
+\varepsilon^3\nonumber \\+36\beta^4\hbar^2\tau^2 m^4\sigma_0^4
+\varepsilon+44\beta^4\hbar^2\tau m^4 \sigma_0^4+16\beta^2\hbar^4\tau^2 m^2\sigma_0^2
+\varepsilon^3+32\beta^2\hbar^4\tau m^2\sigma_0^2
+\varepsilon^3
+\varepsilon^2
+\end{eqnarray}
+
+
+\begin{eqnarray}
+\Delta=12\beta^8\hbar^2\tau d m^4 t\epsilon+104\beta^6\hbar^2\tau d m^4\sigma_0^2\epsilon^2+72\beta^4\hbar^4\tau d m^2 t^2\epsilon^2\nonumber \\+32\beta^4\hbar^4\tau d m^2 t\epsilon^3+72\beta^4\hbar^2\tau d m^4\sigma_0^4 t\epsilon^2+64\beta^2\hbar^4\tau d m^2 \sigma_0^2\epsilon^2\nonumber \\-12\beta^8dm^6\sigma_0^4\epsilon+32\hbar^6\tau d t^2\epsilon^4-8\beta^{10} dm^6\sigma_0^2\epsilon+40\beta^8\hbar^2\tau d m^4\epsilon^2\nonumber\\-12\beta^8\hbar^2 d m^4 t^2 \epsilon-8\beta^8\hbar^2d m^4 t \epsilon^2+32\beta^4\hbar^4\tau d m^2\epsilon^4+32\hbar^4\tau d m^2\sigma_0^4\epsilon^4
+\end{eqnarray}
+
+\begin{eqnarray}
+\Lambda=\beta^{12}\tau m^6+\beta^{12}m^6 t+4\beta^{12}m^6\varepsilon+6\beta^{10}\tau m^6\sigma_0^2+12\beta^{10}m^6\sigma_0^2\varepsilon\nonumber\\+8\beta^{8}\hbar^2
+m^4\varepsilon^3+9\beta^{8}\tau m^6\sigma_0^4+10\beta^{8}\tau m^6\sigma_0^4\varepsilon+16\hbar^6\tau t^2\varepsilon\nonumber\\+9\beta^{8}\hbar^2\tau m^4t^2+28\beta^{8}\hbar^2\tau m^4\varepsilon^2+10\beta^{8}\hbar^2\tau m^4 t^2\varepsilon\nonumber\\+8\beta^{8}\hbar^2\tau m^4 t\varepsilon^2 +16\beta^{6}\hbar^2 m^4\sigma_0^2\varepsilon^3+ 16\beta^{4}\hbar^4\tau m^2\varepsilon^4+8\beta^{4}\hbar^4m^2 t^2\varepsilon^3\nonumber\\+8\beta^{4}\hbar^2 m^4 \sigma_0^4\varepsilon^3+
++16\hbar^4\tau m^2\sigma_0^4\varepsilon^4
++20\beta^{8}\hbar^2\tau m^4 t\varepsilon+64\beta^{6}\hbar^2 \tau m^4\sigma_0^2\varepsilon^2\nonumber\\+40\beta^{4}\hbar^4\tau m^2 t^2 \varepsilon^2+16\beta^{4}\hbar^4\tau m^2 t \varepsilon^3+40\beta^{4}\hbar^2\tau m^4 \sigma_0^4\varepsilon^2+32\beta^{2}\hbar^4\tau m^2 \sigma_0^2\varepsilon^4
+\end{eqnarray}
+
+\begin{eqnarray}
+\varphi=\beta^{12}m^6\sigma_0^2+3\beta^{10}m^6\sigma_0^4+3\beta^{10}\hbar^2 m^4 t^2+12\beta^{10}\hbar^2 m^4 t \varepsilon\nonumber\\+20\beta^{10}\hbar^2 m^4 t \varepsilon^2+48\beta^{8}\hbar^2 m^4 \sigma_0^2 \varepsilon^2+32\beta^{6}\hbar^2 m^4 \sigma_0^4 \varepsilon^2\nonumber\\+32\beta^{6}\hbar^4 m^2 t^2 \varepsilon^2+16\beta^{6}\hbar^4 m^2 t \varepsilon^3+16\beta^{6}\hbar^4 m^2 \varepsilon^4\nonumber\\+32\beta^{4}\hbar^4 m^4 \sigma_0^2 \varepsilon^4+16\beta^{2}\hbar^4 m^4 \sigma_0^4 \varepsilon^4+16\beta^{2}\hbar^6 t^2\varepsilon^4
+\end{eqnarray}
+
+\begin{eqnarray}
+\omega=36\beta^8\hbar^2\tau d m^4\sigma_0^2\varepsilon+36\beta^6\hbar^4\tau d m^2 t^2\varepsilon+24\beta^6\hbar^4\tau d m^2 t\varepsilon^2\nonumber\\+
+36\beta^6\hbar^2\tau d m^4 \sigma_0^4 \varepsilon^3+32\beta^4\hbar^4\tau d m^2\sigma_0^2 \varepsilon^3+16\beta^2\hbar^4\tau d m^2\sigma_0^4 \varepsilon^3\nonumber\\+
+8\beta^{10}\hbar^2\tau d m^4 \varepsilon+8\beta^{10}\hbar^2 d m^4 t \varepsilon+
+88\beta^{8}\hbar^2 d m^4\sigma_0^2 \varepsilon^2\nonumber\\+16\beta^{6}\hbar^4 \tau d m^2 \varepsilon^3+16\beta^{6}\hbar^4 \tau d m^2 \varepsilon^3+64\beta^{6}\hbar^4 d m^2 t^2\varepsilon^2\nonumber\\+32\beta^{6}\hbar^4 d m^2 t\varepsilon^3+
+64\beta^{6}\hbar^2 d m^4\sigma_0^4 \varepsilon^2+64\beta^{4}\hbar^4 d m^2\sigma_0^2 \varepsilon^4\nonumber\\+16\beta^{2}\hbar^6 \tau d t^2\varepsilon^3+
+32\beta^{2}\hbar^4 d m^2\sigma_0^4 \varepsilon^4+32\beta^{10}\hbar^2 d t^2 m^4\varepsilon^2\nonumber\\+32\beta^{6}\hbar^4 d m^2\varepsilon^4+32\beta^{2}\hbar^6 d t^2 \varepsilon^3
+\end{eqnarray}
+
+
+\begin{eqnarray}
+\Omega=2\beta^{10}m^6\sigma_0^4+2\beta^{10}\hbar^2 m^4 t^2+32\beta^{10}\hbar^2 m^2\varepsilon^4+32\beta^6\hbar^4 m^2\varepsilon^4 \nonumber\\+16\beta^{2}\hbar^6 t^2 m^6\varepsilon^4+48\beta^{8}\hbar^2\tau m^4\sigma_0^2\varepsilon+40\beta^{6}\hbar^4 \tau^2 m^2 t\varepsilon\nonumber\\+40\beta^{6}\hbar^4 \tau m^2 t^2\varepsilon+40\beta^{6}\hbar^4 \tau m^2 t\varepsilon^2+40\beta^{6}\hbar^2 \tau m^4\sigma_0^4\varepsilon\nonumber\\+
+44\beta^{4}\hbar^4 \tau^2 m^2\sigma_0^2 \varepsilon^2+48\beta^{4}\hbar^4 \tau m^2\sigma_0^2 \varepsilon^3+8\beta^{2}\hbar^4 \tau^2 m^2\sigma_0^4 \varepsilon^2\nonumber\\+16\beta^{2}\hbar^4 \tau m^2\sigma_0^4 \varepsilon^3+
+4\beta^{10}\hbar^2 \tau m^4 t+16\beta^{10}\hbar^2 \tau m^4 \varepsilon\nonumber\\+
+12\beta^{8}\hbar^2 \tau^2 m^4\sigma_0^2+18\beta^{6}\hbar^4 \tau^2 m^2 t^2+36\beta^{6}\hbar^4 \tau^2 m^2 \varepsilon^2\nonumber\\+32\beta^{6}\hbar^4 \tau m^2 \varepsilon^3+18\beta^{6}\hbar^2 \tau^2 m^4\sigma_0^4+8\beta^{2}\hbar^6 \tau^2 t^2 \varepsilon^2\nonumber\\+16\beta^{2}\hbar^6 \tau^2 t \varepsilon^3+16\beta^{2}\hbar^6 \tau t \varepsilon^3+64\beta^{8}\hbar^2 \tau m^4\sigma_0^2 \varepsilon^2\nonumber\\+
+16\beta^{10}\hbar^2 \tau^2 m^4 t \varepsilon+36\beta^{6}\hbar^4 m^2 t^2 \varepsilon^2+
+36\beta^{6}\hbar^2 m^4 \sigma_0^4\varepsilon^2\nonumber\\+48\beta^{4}\hbar^4 m^2 \sigma_0^2\varepsilon^4+16\beta^{2}\hbar^4 m^2 \sigma_0^4\varepsilon^4\nonumber\\+2\beta^{10}\hbar^2 t^2 m^4 +16\beta^{2}\hbar^6 \tau^2\varepsilon^4+2\beta^{10}\hbar^2 t^2 m^4 +16\hbar^6 \tau^2\sigma_0^2\varepsilon^4
+\end{eqnarray}
+
+
+\begin{eqnarray}
+\xi=\beta^{12}\hbar^2\tau^2 m^6 +\beta^{12}\hbar^2 m^6 t^2+16\beta^{12}\hbar^2 m^6\varepsilon^2+16\beta^{12}\hbar^4 m^4\varepsilon^4\nonumber \\16\beta^{12}\hbar^8\tau^2 t^2 \varepsilon^4+2\beta^{12}\hbar^2\tau m^6 t+8\beta^{12}\hbar^2\tau m^6 \varepsilon+8\beta^{12}\hbar^2 m^6 t \varepsilon \nonumber \\ 6\beta^{10}\hbar^2\tau^2 m^6 \sigma_0^2+40\beta^{10}\hbar^2 m^6 \sigma_0^2\varepsilon^2+9\beta^{8}\hbar^4\tau^2 m^4 t\nonumber\\+ 28\beta^{8}\hbar^4\tau^2 m^4\varepsilon^2+ 16\beta^{8}\hbar^4\tau m^4\varepsilon^3+28\beta^{8}\hbar^4 m^4 t^2\varepsilon^3\nonumber\\+ 16\beta^{8}\hbar^4 m^4 t \varepsilon^3+9\beta^{8}\hbar^2\tau^2 m^6\sigma_0^4+28\beta^{8}\hbar^2 m^6\sigma_0^4\varepsilon^2 \nonumber\\ +32\beta^{6}\hbar^4 m^4\sigma_0^2\varepsilon^4+16\beta^{4}\hbar^6 \tau^2 m^2 t\varepsilon^4+16\beta^{4}\hbar^6 m^2 t^2\varepsilon^4\nonumber\\+16\beta^{4}\hbar^4 m^4\sigma_0^4 \varepsilon^4+16\hbar^6 \tau^2 m^2\sigma_0^4 \varepsilon^4+\beta^{12} m^8\sigma_0^4\nonumber\\+24\beta^{10}\hbar^2 \tau m^6\sigma_0^2 \varepsilon+20\beta^{8}\hbar^4 \tau^2 m^4 t\varepsilon+20\beta^{8}\hbar^4 \tau m^4 t^2 \varepsilon\nonumber\\+16\beta^{8}\hbar^4 \tau m^4 t \varepsilon^2+20\beta^{8}\hbar^2 \tau m^6\sigma_0^4 \varepsilon+64\beta^{6}\hbar^4 \tau^2 m^4\sigma_0^2 \varepsilon^2\nonumber\\+32\beta^{6}\hbar^4 \tau m^4\sigma_0^2 \varepsilon^3+40\beta^{4}\hbar^6 \tau^2 m^2 t^2 \varepsilon^2+16\beta^{4}\hbar^6 \tau^2 m^2 t \varepsilon^3\nonumber\\16\beta^{4}\hbar^6 \tau m^2 t^2 \varepsilon^3+40\beta^{4}\hbar^4 \tau^2 m^4\sigma_0^4 \varepsilon^2+16\beta^{4}\hbar^4 \tau m^4\sigma_0^4 \varepsilon^3\nonumber\\+32\beta^{2}\hbar^6 \tau^2 m^2\sigma_0^2 \varepsilon^4
+\end{eqnarray}
+
+\newpage
+\section{Publicações de Artigos}
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=0.8]{artigo.png}
+\caption{Trabalho Publicado, 14 de Março 2016 em Physical Review A}
+\end{figure}
+
+
+
+
+
+
+\end{document}

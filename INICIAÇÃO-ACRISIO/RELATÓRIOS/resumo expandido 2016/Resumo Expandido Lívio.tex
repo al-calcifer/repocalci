@@ -1,0 +1,150 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[brazil]{babel}
+\usepackage[ansinew]{inputenc}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\begin{document}
+
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{federal.JPG}
+\vspace{-20pt}
+\end{center}
+\end{figure}
+\vspace{-0.50cm}
+
+\begin{center}
+MINISTÉRIO DA EDUCAÇÃO - MEC \\
+UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI \\
+DEPARTAMENTO DE FÍSICA \\
+PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PRPPG \\
+COORDENADORIA GERAL DE PESQUISA - CGP \\
+PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIBIC - UFPI \\
+CAMPUS UNIVERSITÁRIO MINISTRO PETRÔNIO PORTELA - BLOCO 06 - BAIRRO
+ININGA CEP: 64049-550 - TERESINA-PI - BRASIL - FONE: (86) 3215-5564
+- FONE/FAX: (86) 3215-5560
+\end{center}
+
+
+\begin{center}
+\begin{large}
+{\Large \textbf {Estudo computacional do efeito do meio compressor em nanotubos de carbono.}}
+\end{large}
+\end{center}
+
+
+\large \textit { Antonio Lívio de Sousa Cruz (aluno de ICV/UFPI), Acrísio Lins de Aguiar(Orientador, Departamento de
+Física - UFPI)}
+
+\textbf{Palavras-chave:} Nanotubos, simulação, dinâmica molecular, compressão.
+
+\begin{center}
+\textbf{Introdução}
+\end{center}
+
+\paragraph{} Descobertos em $1991$ por S. Iijima, os nanotubos de carbono são atualmente um dos assuntos de destaque na nanociência e nanotecnologia, ultrapassando assim as barreiras da física, che. Desde o seu descobrimento, são estudadas suas propriedades térmicas, óticas, mecânicas e elétricas para que sejam de conhecimento as vastas possibilidades de utilização que possuem, segundo suas características. Assim, estas nanoestruturas podem ser utilizadas em diferentes tipos de materiais, como concreto, fibras, polímeros, sensores, dentre outros. As simulações computacionais são importantes por poderem reproduzir cenários difíceis, ou ate mesmo impossíveis de serem reproduzidos por experimentos comuns.
+
+
+\begin{center}
+\textbf{Metodologia}
+\end{center}
+\paragraph{}
+ O cálculo da força que é obtida pela derivada do potencial e é eplicada pelo próprio potencial entre as partículas do sistema. Podemos assim definir a energia cinética e temperatura do sistema com cálculos clássicos vistos nos cursos de física básica que são passados para a linguagem de programação. As condições periódicas de contorno e a convenção da mínima imagem são definidos utilizando \textit{loops} e funções intrínsecas para que o programa entenda que as partículas não devem ultrapassar os limites da caixa. Para fazer a simulação a compressão dos nanotubos de diversos tamanhos foi utilizado o \textit{Brenner's code}, com o qual comprimimos os CNTs de cada tamanho em sua fase circular e colapsada, calculamos sua pressão de colapso, módulo de bulk e por fim, pudemos obter os gráficos desejados.
+  
+
+\begin{center}
+\textbf{Resultados e Discussões}
+\end{center}
+\paragraph{}
+
+
+\paragraph{}
+Após concluirmos a simulação da caixa somos capazes de colher informações importantes como a evolução da temperatura do sistema com o passar do tempo, utilizando diferentes velocidades para as partículas, como demonstrado a Fig. $2$, de modo que isto pode nos dizer se o sistema simulado está conforme um sistema real, a energia cinética do mesmo e aceleração de cada partícula. Com base no Potencial de Lennard-jones descrito na eq. $1$,
+
+
+\begin{equation}
+V(r)=4\epsilon\left[\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6}\right],
+\end{equation}
+
+pudemos obter as forças que existirá entre as partículas como visto na eq. $2$.
+
+\begin{equation} 
+ F(r)=-\nabla V(r)=\frac{24 \epsilon}{r} \left[2\left(\frac{\sigma}{r}\right)^{12}-\left(\frac{\sigma}{r}\right)^{6} \right]\hat{r},
+\end{equation}
+
+\paragraph{}
+Utilizando o algoritmo de Verlet que determina o cálculo que deverá ser feito para simularmos a posição e velocidade de cada partícula, nos foi fornecido por este, tais equações
+
+\begin{equation}
+r(t+\Delta t)= 2r(t)-r(t-\Delta t)+a(t)\Delta t^2+O(\Delta t)^4
+\end{equation}
+
+e também sua velocidade $v(t)$:
+\begin{equation}
+v(t)=\frac{r(t+\Delta t)-r(t-\Delta t)}{2\Delta t}, 
+\end{equation}
+
+as quais foram descritas em linguagem Fortran 90 para efetuar a simulação desejada.
+
+Ao fazermos as simulações, fizemos primeiro um processo de compressão em cada nanotubo, do $(10,0)$ ao $(20,0)$ utilizamos uma subrotina que tem como função calcular o volume e gerar arquivos com dados da pressão e entalpia de cada nanotubo, com os quais podemos gerar gráficos com a finalidade de encontrar a pressão de colapso e o módulo de Bulk de cada um. Assim, finalmente podemos construir os gráficos das figuras $1$ e $2$ onde temos que a pressão de colapso do nanotubo aumenta de acordo com que vai diminuindo seu diâmetro, ou seja, quanto nemor seu tamanho maior sua resistência à pressão.
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.3]{P*-d.pdf}
+\caption{Gráfico da relação pressão de colapso do nanotubo \textit{vs} o seu diâmetro}
+\end{figure}
+
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.3]{Bo-d.pdf}
+\caption{Gráfico da relação módulo de Bulk \textit{vs} o seu diâmetro }
+\end{figure}
+
+
+\begin{center}
+\textbf{Conclusões}
+\end{center}
+\paragraph{}
+ Pudemos assim observar a variação da pressão de colapso segundo diferentes classificações de nanotubos, ao observarmos o comportamento da entalpia desse sistema comforme ocorre sua compressão. 
+
+
+\begin{center}
+\textbf{Referências}
+\end{center}
+[1] MADEIRA, Lucas. A função radial de distribuição de pares para sistemas Lennard-Jones bidimensionais, 2012.
+\newline
+[2] NAMBA, A. M; DA SILVA, V. B.Dinâmica molecular: teoria e aplicações em planejamento de fármacos, 2008.
+\newline
+[3] M. P. Allen and D. J. Tildesley.Computer Simulation of Liquids(Clarendon Press, Oxford, 1989).
+\newline
+[4] OLIVERIA, R. C. M. T. Transformação estrutural induzida por presão: um estudo por dinâmica molecular, 2002.
+\newline
+[5] GOMES, A. de Souza Filho;FAGAN, Solange Binotto. Funcionalização de Nanotubos de Carbono, 2007;
+\newline
+[6] DOS ANJOS, Marcelo Rodrigues.Estudo do Acoplamento em Nanotubos De Carbono e Duas e Três Camadas: Propriedades Mecânicas e Vibracionais.
+\newline
+[7] HERBST, Marcelo Hawrylak; MACÊDO, Maria Iaponeide Fernandes; ROCCO, Ana Maria. Tecologia dos Nanotubos de Carbono:Tendências e Perspectivas de uma Área Multidisciplinar.
+
+\begin{center}
+\textbf{Apoio}
+\end{center}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.5]{capes.png}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.02]{cnpq.jpg}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphics[scale=0.1]{ufpibrasao.jpeg}
+\end{figure}
+
+\end{document}
